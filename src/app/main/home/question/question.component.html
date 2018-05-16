@@ -1,0 +1,111 @@
+<button mat-button class="backButton" (click)="back()">
+  <a>
+    <mat-icon>
+      <i class="fa fa-angle-left w3-large"></i>
+    </mat-icon>Back</a>
+</button>
+
+<div class="Btn">
+  <!-- card first-->
+  <mat-card class="cardBox">
+    <div class="example-container">
+      <br>
+      <h2>Add Question</h2>
+
+      <form class="example-form">
+        <mat-form-field class="example-full-id">
+          <input matInput placeholder="question id" [(ngModel)]="id" name="id">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="question ?" [(ngModel)]="question" name="question">
+        </mat-form-field>
+        <mat-select class="pt" placeholder="LV " [(ngModel)]="lv" name="lv">
+          <mat-option value="1">1</mat-option>
+          <mat-option value="2">2</mat-option>
+          <mat-option value="3">3</mat-option>
+        </mat-select>
+
+        <mat-select class="pt" placeholder="Select question body" [(ngModel)]="body" name="bshow">
+          <mat-option *ngFor="let s of bshow" value="{{s}}">{{s}}</mat-option>
+
+        </mat-select>
+        <!-- edit at full version-->
+        <div class="pt">
+
+        </div>
+        <div class="example-full-width">
+          <mat-form-field class="example-full-id">
+            <input matInput placeholder="answer" [(ngModel)]="ans.ans" name="ans.ans">
+          </mat-form-field>
+          <mat-form-field class="example-full-id2">
+            <input matInput placeholder="answer id" [(ngModel)]="ans.ansid" name="ans.ansid">
+          </mat-form-field>
+          <!-- <mat-form-field class="example-full-id">
+          <input matInput placeholder="symptom" [(ngModel)]="ans.symptom" name="ans.symptom">
+        </mat-form-field>-->
+
+          <mat-form-field class="example-full-id">
+            <input type="text" placeholder="symptom" aria-label="Number" matInput [(ngModel)]="ans.symptom" [matAutocomplete]="auto"
+              name="ans.symptom">
+            <mat-autocomplete #auto="matAutocomplete">
+              <mat-option *ngFor="let option of symptomlist |filter:ans.symptom" [value]="option.name">
+                {{ option.name }}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+
+        </div>
+        <div class="pt">
+          <font color="red">{{strans}}</font>
+          <button mat-raised-button class="addchoiceBtn" (click)="addanswer()"> Add answer choice </button>
+          <br>
+        </div>
+
+
+
+        <!-- <div class="example-full-width" *ngFor="let answer of answer">
+          <mat-form-field class="example-full-id">
+            <input matInput placeholder="answer" [(ngModel)]="answer.ans" name="answer.ans" disabled="true">
+          </mat-form-field>
+          <mat-form-field class="example-full-id2">
+            <input matInput placeholder="answer id" [(ngModel)]="answer.ansid" name="answer.ansid" disabled="true">
+          </mat-form-field> -->
+        <!-- <mat-form-field class="example-full-id">
+        <input matInput placeholder="symptom" [(ngModel)]="ans.symptom" name="ans.symptom">
+      </mat-form-field>-->
+
+        <!-- <mat-form-field class="example-full-id">
+            <input type="text" placeholder="symptom" aria-label="Number" matInput [(ngModel)]="answer.symptom" [matAutocomplete]="auto"
+              name="answer.symptom" disabled="true">
+            <mat-autocomplete #auto="matAutocomplete">
+              <mat-option *ngFor="let option of symptomlist |filter:answer.symptom" [value]="option.ID">
+                {{ option.name }}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field> -->
+        <div class="example-full-width" *ngFor="let answer2 of answer">
+          <mat-form-field class="example-full-id">
+            <input matInput placeholder="answer" value="{{answer2.ans}}" name="answer2.ans" disabled="true">
+          </mat-form-field>
+          <mat-form-field class="example-full-id2">
+            <input matInput placeholder="answer id" value="{{answer2.ansid}}" name="answer2.ansid" disabled="true">
+          </mat-form-field>
+          <mat-form-field class="example-full-id">
+            <input type="text" placeholder="symptom" matInput value="{{answer2.symptom}}" name="answer2.symptom" disabled="true">
+          </mat-form-field>
+
+        </div>
+
+        <div class="btnBottom">
+          <button mat-raised-button mat-button color="accent" (click)="cancle()">cancle</button>
+          <button mat-raised-button mat-button color="primary" (click)="addquestion()"> ADD Question</button>
+        </div>
+
+        <div class="">
+          <font class="btnBottom" color="{{color}}">{{stradd}}</font>
+        </div>
+        <br>
+      </form>
+    </div>
+  </mat-card>
+</div>

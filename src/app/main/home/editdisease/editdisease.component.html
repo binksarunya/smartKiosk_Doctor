@@ -1,0 +1,47 @@
+<button mat-button class="backButton" (click)="back()">
+  <a>
+    <mat-icon>
+      <i class="fa fa-angle-left w3-large"></i>
+    </mat-icon>Back</a>
+</button>
+
+<div class="Btn">
+  <form class="example-form">
+    <mat-form-field class="search-input">
+      <input matInput placeholder="Search by Symptom Disease name" [(ngModel)]="search" name="search">
+    </mat-form-field>
+    <i class="fa fa-search w3-xlarge"></i>
+  </form>
+
+  <mat-card class="cardBox">
+    <div class="example-container mat-elevation-z8">
+      <table class="table">
+        <thead>
+          <tr class="headTitle">
+            <th scope="col">ID</th>
+            <th scope="col">Disease</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+        <tbody class="textinbox">
+          <tr *ngFor="let disease of diseaselist |filter:search">
+            <td>{{disease.ID}}</td>
+            <td>{{disease.name}}</td>
+            <td>
+              <button mat-button (click)="edit(disease)">
+                <i class="fa fa-edit w3-xlarge"></i>
+              </button>
+            </td>
+            <td>
+              <button mat-button (click)="delete(disease)">
+                <i class="fa fa-trash w3-xlarge"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </mat-card>
+
+</div>

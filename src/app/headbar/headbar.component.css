@@ -1,0 +1,34 @@
+/* Toolbar css*/
+.fill-space {
+  flex: 1 1 auto;
+}
+
+.colorToolbar {
+  background-color:#b3d9ff;
+  font-family: 'Bahnschrift';
+  height: 100px;
+  
+}
+
+.colorSymptom1 {
+  color:  #002b80;
+  font-size: 25px;
+}
+.colorSymptom2 {
+  color:  black;
+  font-size: 25px;
+}
+
+/* logo toolbar*/
+.angular-logo {
+  /*margin: 6px 4px 3px 0;*/
+  height: 55px;
+  vertical-align: middle;
+  margin-top: 1px;
+  margin-bottom: 2px;
+  margin-left: 50px;
+  margin-right: 5px;
+}
+.fill-remaining-space {
+flex: 1 1 auto;
+}

@@ -1,0 +1,50 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<div class="">
+
+  <img class="img" src="/assets/picture/LOGO.png" />
+
+  <div class="loginBox">
+    <div class="formContent">
+      <form class="example-form">
+        <tr>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="ID" value="" [(ngModel)]="id" name="id">
+          </mat-form-field>
+        </tr>
+
+        <tr>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="PASSWORD" value="" [(ngModel)]="pass" name="pass" [type]="password">
+          </mat-form-field>
+        </tr>
+      </form>
+      <font color="red">{{warn}}</font>
+      <input type="submit" value="LOG IN" (click)="login()">
+
+      <br>
+      <br>
+      <!-- Remind Passowrd -->
+      <div class="Footer">
+
+        <td>
+          <a href="#">Forgot Password </a>
+        </td>
+        <td>
+          <a> &nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp; </a>
+        </td>
+        <td>
+          <a href="#">Register</a>
+        </td>
+
+      </div>
+
+    </div>
+  </div>
+</div>

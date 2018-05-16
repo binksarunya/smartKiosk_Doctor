@@ -1,0 +1,284 @@
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+      font-family: 'Kanit';
+  }
+  
+  .w3-row-padding img {
+      margin-bottom: 20px;
+  }
+  
+  .w3-sidebar {
+      /*width: 150px;*/
+      background: #cce6ff;
+      height: 100%;
+      width: 200px;
+      position: absolute;
+      z-index: 1;
+      overflow: auto;
+      top: 0px;
+  }
+
+  /*Disease file*/
+  .w3-jumbo {
+    font-size: 27px!important;
+    text-align: left;
+    margin-left: 25%;
+    margin-top: 6%;
+  }
+
+  .backButton {
+    font-size: 20px;
+    text-align: left;
+    /*margin-left: 25%;*/
+    margin-top: 2%;
+    font-family: 'Kanit';
+    margin-left: 10%;
+  }
+
+  .fa fa-angle-left w3-xlarge {
+    text-align: center;
+  }
+
+  
+  /* css table*/
+  .example-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 100%;
+    text-align: -webkit-center;
+    text-align: -moz-center;
+    font-family: 'Kanit';
+    font-size: 20px;
+  }
+  
+  .mat-table {
+    overflow: auto;
+    max-height: 700px;
+    
+    /*width: 133%;*/
+  }
+  
+  .mat-header-cell.mat-sort-header-sorted {
+    color: black;
+  }
+  
+  /* card */
+  mat-card {
+    max-width: 80%;
+    margin: 2em auto;
+    padding: 0px;
+    /*text-align: center;*/
+    
+  }
+
+  .mat-header-cell {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Kanit';
+}
+
+.mat-cell {
+    font-size: 18px;
+    font-family: 'Kanit';
+}
+
+/* box table space of top */ 
+.cardBox {
+  margin-top: 0.5%;
+  
+}
+
+/*input feild*/
+.example-form {
+ 
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    /*margin-left: 10%;*/
+}
+  
+.example-full-width {
+    width: 100%;
+}
+  
+.editHead {
+    text-align: center;
+}
+
+.editBtn {
+    margin-left: 38%;
+}
+
+.deleteHead {
+    text-align: center;
+}
+
+.deleteBtn {
+    margin-left: 38%;
+}
+
+.addBtn {
+   width: 100px; 
+}
+
+.Btn {
+  margin: 10px 50px;
+  display: block;
+  /*align-items: center;*/
+  /*margin: 8em auto;*/
+  text-align: -webkit-center;
+  text-align: -moz-center;
+ 
+}
+
+.b1 {
+  padding: 30px 80px;
+  display: inline-block;
+  font-family: 'Kanit';
+  font-size: 25px;
+  margin: 20px;
+}
+
+/* HeroesComponent's private CSS styles */
+.heroes {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 15em;
+}
+.heroes li {
+  position: relative;
+  cursor: pointer;
+  background-color: #EEE;
+  margin: .5em;
+  padding: .3em 0;
+  height: 1.6em;
+  border-radius: 4px;
+}
+
+.heroes li:hover {
+  color: #607D8B;
+  background-color: #DDD;
+  left: .1em;
+}
+
+.heroes a {
+  color: #888;
+  text-decoration: none;
+  position: relative;
+  display: block;
+  width: 250px;
+}
+
+.heroes a:hover {
+  color:#607D8B;
+}
+
+.heroes .badge {
+  display: inline-block;
+  font-size: small;
+  color: white;
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color: #607D8B;
+  line-height: 1em;
+  position: relative;
+  left: -1px;
+  top: -4px;
+  height: 1.8em;
+  min-width: 16px;
+  text-align: right;
+  margin-right: .8em;
+  border-radius: 4px 0 0 4px;
+}
+
+.button {
+  background-color: #eee;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  cursor: hand;
+  font-family: Arial;
+}
+
+button:hover {
+  background-color: #cfd8dc;
+}
+
+button.delete {
+  position: relative;
+  left: 194px;
+  top: -32px;
+  background-color: gray !important;
+  color: white;
+}
+
+.search-input {
+  position: relative;
+  padding: 1rem 0 0.5rem 0;
+  height: 4.5rem;
+  width: 20.5rem;
+  font-family: 'Kanit';
+  font-size: 18px;
+}
+
+.symptom-input {
+  position: relative;
+  padding: 1rem 0 0.5rem 0;
+  height: 4.5rem;
+  width: 21.5rem;
+  font-family: 'Kanit';
+  font-size: 18px;
+}
+
+.table {
+  font-family: 'Kanit';
+  font-size: 20px;
+  width: 100%;
+}
+
+.headTitle {
+  color: #8c8c8c;
+  /*text-align: -webkit-center;*/
+  text-align: -moz-center;
+  font-size: 18px;
+}
+
+.textinbox {
+  text-align: center;
+}
+
+  /* STRUCTURE */
+ 
+  .loginBox {
+    display: flex;
+    align-items: center;
+    flex-direction: column; 
+    justify-content: center;
+    width: 100%;
+    min-height: 50%;
+    padding: 80px;
+    box-sizing: border-box;
+  }
+  
+  
+  #formContent {
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    background: #fff;
+    padding: 60px;
+    width: 100%;
+    max-width: 1000px;
+    position: relative;
+  }
+
+  hr {
+    width: 30%;
+  }
+
+  

@@ -1,0 +1,103 @@
+
+
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+      font-family: 'Kanit';
+  }
+  
+  .w3-row-padding img {
+      margin-bottom: 20px;
+  }
+  
+  .w3-sidebar {
+      /*width: 150px;*/
+      background: #cce6ff;
+      height: 100%;
+      width: 200px;
+      position: absolute;
+      z-index: 1;
+      overflow: auto;
+      top: 0px;
+  }
+
+  
+  .backButton {
+    font-size: 20px;
+    text-align: left;
+    /*margin-left: 25%;*/
+    margin-top: 6%;
+    font-family: 'Kanit';
+    margin-left: 20%;
+  }
+
+  .fa fa-angle-left w3-xlarge {
+    text-align: center;
+  }
+
+  
+  /* css table*/
+  .example-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+  }
+  
+  
+  
+  .mat-header-cell.mat-sort-header-sorted {
+    color: black;
+  }
+  
+  /* card */
+  mat-card {
+    max-width: 60%;
+    margin: 2em auto;
+    padding: 0px;
+    /*text-align: center;*/
+    
+  }
+
+
+/* box table space of top */ 
+/*.cardBox {
+  margin-top: 0.5%;
+  
+}*/
+
+/*input feild*/
+.example-form {
+ 
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    margin-left: 20%;
+}
+  
+.example-full-width {
+    width: 100%;
+}
+  
+
+.Btn {
+  margin: 10px 50px;
+  display: block;
+  /*align-items: center;*/
+  margin: 8em auto;
+  margin-left: 32%;
+  
+  
+}
+
+.b1 {
+  padding: 30px 80px;
+  display: inline-block;
+  font-family: 'Kanit';
+  font-size: 25px;
+  margin: 20px;
+}
+

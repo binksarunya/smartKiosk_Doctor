@@ -1,0 +1,109 @@
+<button mat-button class="backButton" (click)="back()">
+  <a>
+    <mat-icon>
+      <i class="fa fa-angle-left w3-large"></i>
+    </mat-icon>Back</a>
+</button>
+
+<div class="Btn">
+
+  <!-- card first-->
+  <mat-card class="cardBox">
+    <div class="example-container">
+      <h2>Add Symptom</h2>
+      <form class="example-form">
+        <td>
+          <mat-form-field class="symptom-input">
+            <input matInput placeholder="Symptom name" [(ngModel)]="sname" name="sname">
+          </mat-form-field>
+          <br>
+          <br>
+          <br>
+          <button mat-raised-button class="addBtn" mat-button color="accent" (click)="adds()"> ADD </button>
+        </td>
+      </form>
+      <br>
+      <div class="example-form">
+        <font color="{{color}}">{{stradd}}</font>
+      </div>
+    </div>
+  </mat-card>
+
+  <br>
+  <br>
+
+  <form class="example-form">
+    <mat-form-field class="search-input">
+      <input matInput placeholder="Search by Symptom name" [(ngModel)]="search" name="search">
+    </mat-form-field>
+    <i class="fa fa-search w3-xlarge"></i>
+  </form>
+  <br><br>
+  <!-- card second-->
+  <!-- <mat-card class="cardBox">
+    <div class="example-container mat-elevation-z8">
+      <mat-table #table [dataSource]="dataSource" matSort> -->
+
+        <!-- Position Column -->
+        <!-- <ng-container matColumnDef="symptom">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Symptom </mat-header-cell>
+          <mat-cell *matCellDef="let element "> {{element.name}} </mat-cell>
+        </ng-container> -->
+
+        <!-- edit column-->
+        <!-- <ng-container matColumnDef="edit">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Edit </mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            <button mat-button (click)="edit(element)">
+              <i class="fa fa-edit w3-xlarge"></i>
+            </button>
+          </mat-cell>
+        </ng-container> -->
+
+        <!-- delete Column -->
+        <!-- <ng-container matColumnDef="delete">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Delete </mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            <button mat-button (click)="delete(element)">
+              <i class="fa fa-trash w3-xlarge"></i>
+            </button>
+          </mat-cell>
+        </ng-container> -->
+<!-- 
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+    </div>
+  </mat-card> -->
+
+  <mat-card class="cardBox">
+    <div class="example-container mat-elevation-z8">
+      <table class="table">
+        <thead>
+          <tr class="headTitle">
+            <th scope="col">Symptom</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+        <tbody class="textinbox">
+          <tr *ngFor="let symptom of symp |filter:search">
+            <td>{{symptom.name}}</td>
+            <td>
+              <button mat-button (click)="edit(symptom)">
+                <i class="fa fa-edit w3-xlarge"></i>
+              </button>
+            </td>
+            <td>
+              <button mat-button (click)="delete(symptom)">
+                <i class="fa fa-trash w3-xlarge"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </mat-card>
+
+
+</div>

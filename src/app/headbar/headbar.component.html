@@ -1,0 +1,28 @@
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Toolbar -->
+<mat-toolbar class="colorToolbar">
+  <span>
+    <td>
+      <img src="/assets/picture/LOGO.png" class="angular-logo">
+    </td>
+    <td>
+      <b class="colorSymptom1">SYMPTOM&nbsp;</b>
+    </td>
+    <td>
+      <b class="colorSymptom2">CHECKER</b>
+    </td>
+  </span>
+
+  <span class="fill-space"></span>
+  <font color="#008000" size="3">{{user.name}}&nbsp;&nbsp;{{user.lastname}}&nbsp;&nbsp;</font>
+
+  <button mat-button (click)=logout()>
+    Log out
+  </button>
+</mat-toolbar>
