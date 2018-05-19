@@ -97,7 +97,7 @@ export class DiseaseComponent implements OnInit {
 }
 
   back() {
-    this.rout.navigate(['/main/home']);
+    this.rout.navigate(['/main/diseasemanage']);
   }
 
 }

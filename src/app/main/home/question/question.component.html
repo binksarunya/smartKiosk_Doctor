@@ -17,29 +17,42 @@
           <input matInput placeholder="question id" [(ngModel)]="id" name="id">
         </mat-form-field>
         <mat-form-field class="example-full-width">
-          <input matInput placeholder="question ?" [(ngModel)]="question" name="question">
+          <input matInput placeholder="question detail ?" [(ngModel)]="question" name="question">
         </mat-form-field>
-        <mat-select class="pt" placeholder="LV " [(ngModel)]="lv" name="lv">
-          <mat-option value="1">1</mat-option>
-          <mat-option value="2">2</mat-option>
-          <mat-option value="3">3</mat-option>
-        </mat-select>
 
         <mat-select class="pt" placeholder="Select question body" [(ngModel)]="body" name="bshow">
           <mat-option *ngFor="let s of bshow" value="{{s}}">{{s}}</mat-option>
 
         </mat-select>
+        <mat-form-field class="example-full-id" class="pt">
+          <input matInput placeholder="answer ID">
+        </mat-form-field>
+        <button mat-raised-button>+</button>
+
+
+        <div class="btnBottom">
+          <button mat-raised-button mat-button color="accent" (click)="cancle()">cancle</button>
+          <button mat-raised-button mat-button color="primary" (click)="addquestion()"> ADD Question</button>
+        </div>
+
+        <div class="">
+          <font class="btnBottom" color="{{color}}">{{stradd}}</font>
+        </div>
+        <br>
+
+        <h2>Add Answers</h2>
         <!-- edit at full version-->
         <div class="pt">
 
         </div>
         <div class="example-full-width">
-          <mat-form-field class="example-full-id">
-            <input matInput placeholder="answer" [(ngModel)]="ans.ans" name="ans.ans">
-          </mat-form-field>
           <mat-form-field class="example-full-id2">
             <input matInput placeholder="answer id" [(ngModel)]="ans.ansid" name="ans.ansid">
           </mat-form-field>
+          <mat-form-field class="example-full-id">
+            <input matInput placeholder="answer" [(ngModel)]="ans.ans" name="ans.ans">
+          </mat-form-field>
+
           <!-- <mat-form-field class="example-full-id">
           <input matInput placeholder="symptom" [(ngModel)]="ans.symptom" name="ans.symptom">
         </mat-form-field>-->
@@ -53,6 +66,9 @@
               </mat-option>
             </mat-autocomplete>
           </mat-form-field>
+          <mat-form-field class="example-full-id2">
+              <input matInput placeholder="nextquestion">
+            </mat-form-field>
 
         </div>
         <div class="pt">
@@ -96,15 +112,7 @@
 
         </div>
 
-        <div class="btnBottom">
-          <button mat-raised-button mat-button color="accent" (click)="cancle()">cancle</button>
-          <button mat-raised-button mat-button color="primary" (click)="addquestion()"> ADD Question</button>
-        </div>
 
-        <div class="">
-          <font class="btnBottom" color="{{color}}">{{stradd}}</font>
-        </div>
-        <br>
       </form>
     </div>
   </mat-card>

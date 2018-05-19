@@ -3,31 +3,31 @@ import { Router } from '@angular/router';
 import { QuestionService } from '../../../services/question.service';
 
 @Component({
-  selector: 'app-editquestion',
-  templateUrl: './editquestion.component.html',
-  styleUrls: ['./editquestion.component.css']
+  selector: 'app-linkquestion',
+  templateUrl: './linkquestion.component.html',
+  styleUrls: ['./linkquestion.component.css']
 })
-export class EditquestionComponent implements OnInit {
-
+export class LinkquestionComponent implements OnInit {
   public question: any;
   public search: string;
-
-  constructor(private rout: Router, private quest: QuestionService) { }
+  public link:boolean;
+  constructor(private rout: Router, private quest: QuestionService) {
+    this.link = false;
+   }
 
   ngOnInit() {
     this.getquest();
-
   }
+
   back() {
     this.rout.navigate(['/main/questionmanage']);
   }
 
-  edit(data: any) {
-    console.log(data);
+  linkquestion(quest:any){
+      console.log(quest);
+      this.link=true;
   }
-  delete(data: any) {
-    console.log(data);
-  }
+
   public getquest() {
     this.quest.get().subscribe(
       response => {

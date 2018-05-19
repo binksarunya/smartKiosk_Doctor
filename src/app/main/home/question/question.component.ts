@@ -71,13 +71,14 @@ export class QuestionComponent implements OnInit {
   ngOnInit() {
   }
   back() {
-    this.rout.navigate(['/main/home']);
+    this.rout.navigate(['/main/questionmanage']);
   }
 
   addanswer() {
     //console.log(this.ans);
     if (this.ans.ans != null && this.ans.ansid != null && this.ans.symptom != null) {
-      this.answer.push(this.ans);
+      // this.answer.push(this.ans);
+      
       this.ans = new Answer();
       this.setnullans();
       this.strans = null;

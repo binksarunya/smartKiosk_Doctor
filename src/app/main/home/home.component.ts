@@ -31,6 +31,12 @@ export class HomeComponent implements OnInit {
   diag(){
     this.rout.navigate(['/main/admission']);
   }
+  diseasemanage(){
+    this.rout.navigate(['/main/diseasemanage']);
+  }
+  questionmanage(){
+    this.rout.navigate(['/main/questionmanage']);
+  }
 
 
 }

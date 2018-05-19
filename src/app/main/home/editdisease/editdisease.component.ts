@@ -17,8 +17,9 @@ export class EditdiseaseComponent implements OnInit {
     this.getdisease();
   }
   back() {
-    this.rout.navigate(['/main/home']);
+    this.rout.navigate(['/main/diseasemanage']);
   }
+
   edit(data: any) {
     console.log(data);
   }

@@ -14,6 +14,9 @@ import { QuestionComponent } from '../main/home/question/question.component';
 import { AdmissionComponent } from '../main/admission/admission.component';
 import { EditdiseaseComponent } from '../main/home/editdisease/editdisease.component';
 import { EditquestionComponent } from '../main/home/editquestion/editquestion.component';
+import { QuestionmanageComponent } from '../questionmanage/questionmanage.component';
+import { DiseasemanageComponent } from '../diseasemanage/diseasemanage.component';
+import { LinkquestionComponent } from '../main/home/linkquestion/linkquestion.component';
 
 const routes: Routes = [
   {
@@ -52,6 +55,18 @@ const routes: Routes = [
       {
         path: 'editquestion',
         component: EditquestionComponent,
+      },
+      {
+        path: 'questionmanage',
+        component: QuestionmanageComponent,
+      },
+      {
+        path: 'diseasemanage',
+        component: DiseasemanageComponent,
+      },
+      {
+        path: 'linkquestion',
+        component: LinkquestionComponent,
       }
 
 

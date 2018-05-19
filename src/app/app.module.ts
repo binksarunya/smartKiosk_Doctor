@@ -56,6 +56,9 @@ import { EditdiseaseComponent } from './main/home/editdisease/editdisease.compon
 import { EditquestionComponent } from './main/home/editquestion/editquestion.component';
 
 import { HeadbarComponent } from './headbar/headbar.component';
+import { DiseasemanageComponent } from './diseasemanage/diseasemanage.component';
+import { QuestionmanageComponent } from './questionmanage/questionmanage.component';
+import { LinkquestionComponent } from './main/home/linkquestion/linkquestion.component';
 
 
 
@@ -73,6 +76,9 @@ import { HeadbarComponent } from './headbar/headbar.component';
     EditdiseaseComponent,
     EditquestionComponent,
     HeadbarComponent,
+    DiseasemanageComponent,
+    QuestionmanageComponent,
+    LinkquestionComponent,
     
 
 
