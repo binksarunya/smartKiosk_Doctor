@@ -13,8 +13,9 @@ export class AdmissionComponent implements OnInit {
   public queue: Array<any>;
   private checkqueue: boolean;
   private checkdiag: boolean;
-  private user:any;
-  private diagshow:Array<any>;
+  private user: any;
+  private diagshow: Array<any>;
+  private id: string;
 
   constructor(private rout: Router, private diag: DiagService, private getpatient: GetpatientService) {
     this.getqueue();
@@ -25,22 +26,37 @@ export class AdmissionComponent implements OnInit {
 
   ngOnInit() {
   }
+  checkstr() {
+    this.getqueue();
+  }
 
   diagnosis(q: string) {
-
+    this.id = q;
     this.getdiag(q);
     this.getpatientqueue(q);
-
+    this.setstr(q);
 
   }
-  cancle(){
+  setstr(id: string) {
+    this.diag.updatestr(id).then(Response => {
+
+    });
+  }
+  setstr2(id: string) {
+    this.diag.updatestr2(id).then(Response => {
+      this.getqueue();
+    });
+  }
+  cancle() {
+    this.setstr2(this.id);
     this.getqueue();
     this.checkqueue = true;
     this.checkdiag = false;
+
     this.clear();
   }
 
-  ok(){
+  ok() {
     this.update();
     this.checkqueue = true;
     this.checkdiag = false;
@@ -49,7 +65,7 @@ export class AdmissionComponent implements OnInit {
     this.clear();
   }
 
-  update(){
+  update() {
     this.getpatient.update(this.user.history).then(
       (response) => {
         this.dequeuue(this.user.ID);
@@ -58,7 +74,7 @@ export class AdmissionComponent implements OnInit {
       });
   }
 
-  dequeuue(id:string){
+  dequeuue(id: string) {
     this.getpatient.dequeue(id).then(
       (response) => {
         this.getqueue();
@@ -66,11 +82,11 @@ export class AdmissionComponent implements OnInit {
         //console.log(data);
       });
   }
-  setdiagshow(){
-    for(let i =0;i<this.diag.diagdisease.length;i++){
-        if(this.diag.diagdisease[i].percen>=20){
-          this.diagshow.push(this.diag.diagdisease[i]);
-        }
+  setdiagshow() {
+    for (let i = 0; i < this.diag.diagdisease.length; i++) {
+      if (this.diag.diagdisease[i].percen >= 20) {
+        this.diagshow.push(this.diag.diagdisease[i]);
+      }
     }
 
     //console.log(this.diagshow);
@@ -90,7 +106,7 @@ export class AdmissionComponent implements OnInit {
         } else {
           this.queue = this.diag.queue;
         }
-
+        console.log(this.queue);
       });
   }
 
@@ -109,7 +125,7 @@ export class AdmissionComponent implements OnInit {
     this.getpatient.getpa(id).subscribe(
       response => {
         if (response == true) {
-          this.user=this.getpatient.user;
+          this.user = this.getpatient.user;
           this.checkqueue = false;
           this.checkdiag = true;
         } else {
@@ -119,7 +135,7 @@ export class AdmissionComponent implements OnInit {
       });
   }
 
-  clear(){
+  clear() {
     this.diag.clear();
     this.diagshow = new Array();
   }

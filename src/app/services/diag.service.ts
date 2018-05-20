@@ -8,10 +8,22 @@ import { Connect } from '../models/connect';
 
 @Injectable()
 export class DiagService {
-  public queue:Array<string>;
-  public diagdisease:Array<any>;
+  public queue: Array<string>;
+  public diagdisease: Array<any>;
   constructor(private http: Http) { }
 
+  updatestr(data: any) {
+    console.log(data);
+    let url = Connect.getHostUrl() + '/updatestr.php'
+    let header = { headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' }) };
+    return this.http.post(url, data, header).toPromise();
+  }
+  updatestr2(data: any) {
+    console.log(data);
+    let url = Connect.getHostUrl() + '/updatestr2.php'
+    let header = { headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' }) };
+    return this.http.post(url, data, header).toPromise();
+  }
 
   getqueue(): Observable<boolean> {
 
@@ -38,11 +50,11 @@ export class DiagService {
     }
   }
 
-  getdiag(id:string): Observable<boolean> {
+  getdiag(id: string): Observable<boolean> {
 
     let url = Connect.getHostUrl() + '/getdiag.php';
     let header = { headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' }) };
-    return this.http.post(url,id, header).map((res: Response) => { return this.condiag(res) }).catch((error: any) => {
+    return this.http.post(url, id, header).map((res: Response) => { return this.condiag(res) }).catch((error: any) => {
       console.log("");
       return Observable.of(false);
     });
@@ -56,13 +68,13 @@ export class DiagService {
       //console.log(data.Message);
       return false;
     } else {
-      this.diagdisease=data.data;
+      this.diagdisease = data.data;
       //console.log(this.diagdisease);
       return true;
     }
   }
 
-  clear(){
+  clear() {
     this.queue = new Array();
     this.diagdisease = new Array();
   }

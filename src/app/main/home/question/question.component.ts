@@ -167,6 +167,7 @@ export class QuestionComponent implements OnInit {
             this.answer = new Array();
             this.stradd="add success!";
             this.color="green";
+            this.ansidset = new Array();
           }
           //this.get();
          // console.log(data);

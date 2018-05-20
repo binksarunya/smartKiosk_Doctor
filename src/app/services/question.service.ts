@@ -12,12 +12,37 @@ export class QuestionService {
   public question:any;
   public bodypart:Array<string>;
   public answer:any;
+  public answerbyid:any;
 
   constructor(private http: Http) { }
 
   addquestion(data: any) {
     //console.log(data);
     let url = Connect.getHostUrl() + '/addquestion.php'
+    let header = { headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' }) };
+    return this.http.post(url, data, header).toPromise();
+  }
+  updatenextquestion(data: any) {
+    console.log(data);
+    let url = Connect.getHostUrl() + '/updatenextquestion.php'
+    let header = { headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' }) };
+    return this.http.post(url, data, header).toPromise();
+  }
+  updatequestion(data: any) {
+    console.log(data);
+    let url = Connect.getHostUrl() + '/updatequestion.php'
+    let header = { headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' }) };
+    return this.http.post(url, data, header).toPromise();
+  }
+  deletequestion(data: any) {
+    console.log(data);
+    let url = Connect.getHostUrl() + '/deletequestion.php'
+    let header = { headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' }) };
+    return this.http.post(url, data, header).toPromise();
+  }
+  deleteans(data: any) {
+    console.log(data);
+    let url = Connect.getHostUrl() + '/deleteanswer2.php'
     let header = { headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' }) };
     return this.http.post(url, data, header).toPromise();
   }
@@ -54,6 +79,30 @@ export class QuestionService {
     } else {
       this.answer=data.data;
       //console.log(this.answer);
+      return true;
+    }
+  }
+
+  getanswerid(id:string): Observable<boolean> {
+
+    let url = Connect.getHostUrl() + '/getanswerbyid.php';
+    let header = { headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' }) };
+    return this.http.post(url, id, header).map((res: Response) => { return this.congetansid(res) }).catch((error: any) => {
+      console.log("get ans ");
+      return Observable.of(false);
+    });
+
+  }
+
+  congetansid(res: Response): boolean {
+    let data = res.json();
+    //console.log(data);
+    if (data.Error == "true") {
+
+      return false;
+    } else {
+      this.answerbyid=data.dataans;
+      //console.log(this.answerbyid);
       return true;
     }
   }

@@ -19,7 +19,6 @@
             <th scope="col">Question ID</th>
             <th scope="col">Question</th>
             <th scope="col">Body point</th>
-            <th scope="col">lv question</th>
             <th scope="col">Link</th>
           </tr>
         </thead>
@@ -28,7 +27,6 @@
             <td>{{quest.ID}}</td>
             <td>{{quest.question}}</td>
             <td>{{quest.body}}</td>
-            <td>{{quest.lv}}</td>
             <td>
               <button mat-button (click)="linkquestion(quest)">
                 <i class="fa fa-edit w3-xlarge"></i>
@@ -41,5 +39,44 @@
   </mat-card>
 </div>
 <div class="Btn" *ngIf="link">
-    test
+  <mat-card class="cardBox">
+    <div class="example-container mat-elevation-z8">
+      <mat-form-field class="example-full-id">
+        <input matInput placeholder="question id" [(ngModel)]="questionlink.ID" name="questionlink.ID" disabled="true">
+      </mat-form-field>
+      <mat-form-field class="example-full-id">
+        <input matInput placeholder="question Detail" [(ngModel)]="questionlink.question" name="questionlink.question" disabled="true">
+      </mat-form-field>
+      <mat-form-field class="example-full-id">
+        <input matInput placeholder="Body Point" [(ngModel)]="questionlink.body" name="questionlink.body" disabled="true">
+      </mat-form-field>
+
+      <table class="table">
+        <thead>
+          <tr class="headTitle">
+            <th scope="col">Answer ID</th>
+            <th scope="col">Answer</th>
+            <th scope="col">Symptom</th>
+            <th scope="col">Link</th>
+          </tr>
+        </thead>
+        <tbody class="textinbox">
+          <tr *ngFor="let ans of answerser">
+            <td>{{ans.ID}}</td>
+            <td>{{ans.answer}}</td>
+            <td>{{ans.symptomid}}</td>
+            <td>
+              <mat-form-field class="example-full-id">
+                <input matInput placeholder="next question" [(ngModel)]="ans.nextquestionID" name="ans.nextquestionID" (keyup)="updatenextquestion(ans)">
+              </mat-form-field>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button mat-button color="warn" (click)="hid()">cancle</button>
+      <button mat-button color="accent" (click)="hid()">ok</button>
+      
+    </div>
+  </mat-card>
+
 </div>

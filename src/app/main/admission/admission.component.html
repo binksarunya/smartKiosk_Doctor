@@ -19,15 +19,18 @@
             <tr class="headTitle">
               <th scope="col">Date queue</th>
               <th scope="col">ID Card</th>
+              <th scope="col">Status</th>
               <th scope="col">Diagnosis</th>
+              
             </tr>
           </thead>
           <tbody class="textinbox">
             <tr *ngFor="let q of queue">
               <td>{{q.que}}</td>
               <td>{{q.patientID}}</td>
+              <td (mouseover)="checkstr()">{{q.status}}</td>
               <td>
-                <button mat-button (click)="diagnosis(q.patientID)">
+                <button mat-button (click)="diagnosis(q.patientID)" >
                   <i class="fa fa-edit w3-xlarge"></i>
                 </button>
               </td>
