@@ -11,6 +11,7 @@ export class QuestionService {
 
   public question:any;
   public bodypart:Array<string>;
+  public answer:any;
 
   constructor(private http: Http) { }
 
@@ -20,6 +21,43 @@ export class QuestionService {
     let header = { headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' }) };
     return this.http.post(url, data, header).toPromise();
   }
+  addanswer(data: any) {
+    //console.log(data);
+    let url = Connect.getHostUrl() + '/addanswer.php'
+    let header = { headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' }) };
+    return this.http.post(url, data, header).toPromise();
+  }
+
+  deleteanswer(data: any) {
+    console.log(data);
+    let url = Connect.getHostUrl() + '/deleteanswer.php'
+    let header = { headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' }) };
+    return this.http.post(url, data, header).toPromise();
+  }
+  getanswer(): Observable<boolean> {
+
+    let url = Connect.getHostUrl() + '/getanswer.php';
+    let header = { headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' }) };
+    return this.http.post(url, null, header).map((res: Response) => { return this.congetans(res) }).catch((error: any) => {
+      console.log("get ans ");
+      return Observable.of(false);
+    });
+
+  }
+
+  congetans(res: Response): boolean {
+    let data = res.json();
+    //console.log(data);
+    if (data.Error == "true") {
+
+      return false;
+    } else {
+      this.answer=data.data;
+      //console.log(this.answer);
+      return true;
+    }
+  }
+
 
   get(): Observable<boolean> {
 

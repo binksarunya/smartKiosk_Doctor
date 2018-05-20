@@ -26,7 +26,11 @@ export class QuestionComponent implements OnInit {
   public strans: string;
   public stradd:string;
   public color:string;
-
+  public search:string;
+//--------------------------new--------------
+  public answerset:any;
+  public answerid:string;
+  public ansidset:Array<string>;
 
 
   public quest: Question;
@@ -34,6 +38,8 @@ export class QuestionComponent implements OnInit {
   constructor(private rout: Router, private symptom: AddsymptomService,private questservice:QuestionService) {
     this.getbody();
     this.setnull();
+    this.answerid = null;
+    this.ansidset = new Array();
     this.ans = new Answer();
     this.setnullans();
     this.quest = new Question();
@@ -67,21 +73,66 @@ export class QuestionComponent implements OnInit {
       });
 
   }
-
+  addans(data:string){
+    if(this.answerid!=null){
+    this.ansidset.push(data);
+    this.answerid = null;
+    }
+  }
+  deleteanswerinquestion(data:string){
+    for(let i=0;i<this.ansidset.length;i++){
+      if(this.ansidset[i]==data){
+        this.ansidset.splice(i,1);
+        break;
+      }
+    }
+  }
   ngOnInit() {
+    this.getanswer();
   }
   back() {
     this.rout.navigate(['/main/questionmanage']);
+  }
+  delete(answer:any){
+    this.questservice.deleteanswer(answer).then((Response)=>{
+      this.getanswer();
+    });
+  }
+
+  getanswer(){
+    this.questservice.getanswer().subscribe((response)=>{
+      //console.log(response);
+      if(response==true){
+        this.answerset=this.questservice.answer;
+        //console.log(this.answerset);
+      }
+    });
   }
 
   addanswer() {
     //console.log(this.ans);
     if (this.ans.ans != null && this.ans.ansid != null && this.ans.symptom != null) {
       // this.answer.push(this.ans);
-      
+      this.questservice.addanswer(this.ans).then(
+        (response) => {
+          let data = response.json();
+          console.log(data);
+          // if(data.Error=="true"){
+          //   this.stradd="fail add";
+          //   this.color="red";
+          // }else{
+          //   this.setnull();
+          //   this.setnullans();
+          //   this.answer = new Array();
+          //   this.stradd="add success!";
+          //   this.color="green";
+          // }
+
+        });
       this.ans = new Answer();
       this.setnullans();
       this.strans = null;
+      this.getanswer();
     } else {
       this.strans = "fill all input answer"
     }
@@ -91,16 +142,18 @@ export class QuestionComponent implements OnInit {
     this.answer = new Array();
     this.setnull();
     this.setnullans();
+    this.ansidset = new Array();
     //this.answer.push(new Answer());
 
   }
   addquestion() {
-    if (this.id != null && this.question != null && this.lv != null && this.body != null) {
+    if (this.id != null && this.question != null && this.body != null) {
       this.quest.question = this.question;
       this.quest.id = this.id;
-      this.quest.lv = this.lv;
+      // this.quest.lv = this.lv;
       this.quest.body = this.body;
-      this.quest.answer = this.answer;
+      this.quest.answer = this.ansidset;
+      //console.log(this.quest);
       this.questservice.addquestion(this.quest).then(
         (response) => {
           let data = response.json();
