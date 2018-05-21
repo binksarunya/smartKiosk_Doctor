@@ -74,6 +74,9 @@ export class LoginComponent implements OnInit {
   goregister(){
     this.router.navigate(['/register']);
   }
+  check(){
+    
+  }
 
   /*registerNurse(){
     //console.log("click");
