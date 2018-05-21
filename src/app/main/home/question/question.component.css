@@ -220,3 +220,6 @@ button.delete {
 .setButton {
   font-family: 'Prompt';
 }
+.setSearch {
+  text-align: center;
+}

@@ -61,9 +61,7 @@
   
   /* css table*/
   .example-container {
-    display: flex;
-    flex-direction: column;
-    min-width: 300px;
+    min-width: 200px;
   }
   
   .mat-table {
@@ -239,4 +237,6 @@ button.delete {
   min-width: 300px;
   overflow: auto;
 }
-
+.headTitle {
+  font-family: 'Prompt';
+}
