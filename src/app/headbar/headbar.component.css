@@ -4,9 +4,10 @@
 }
 
 .colorToolbar {
-  background-color:#b3d9ff;
-  font-family: 'Bahnschrift';
-  height: 100px;
+  /*background-color:#b3d9ff;*/
+  background-color: white;
+  font-family: Bahnschrift;
+  /*height: 100px;*/
   
 }
 

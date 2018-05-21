@@ -5,7 +5,7 @@
   h4,
   h5,
   h6 {
-      font-family: 'Kanit';
+      font-family: 'Prompt';
   }
   
   .w3-row-padding img {
@@ -22,15 +22,13 @@
       overflow: auto;
       top: 0px;
   }
-
-  
   .backButton {
     font-size: 20px;
     text-align: left;
-    /*margin-left: 25%;*/
-    margin-top: 6%;
-    font-family: 'Kanit';
-    margin-left: 20%;
+    margin-left: 0%;
+    margin-top: 4%;
+    font-family: 'Prompt';
+
   }
 
   .fa fa-angle-left w3-xlarge {
@@ -45,8 +43,6 @@
     min-width: 300px;
   }
   
-  
-  
   .mat-header-cell.mat-sort-header-sorted {
     color: black;
   }
@@ -56,16 +52,9 @@
     max-width: 60%;
     margin: 2em auto;
     padding: 0px;
-    /*text-align: center;*/
-    
+  
   }
 
-
-/* box table space of top */ 
-/*.cardBox {
-  margin-top: 0.5%;
-  
-}*/
 
 /*input feild*/
 .example-form {
@@ -80,34 +69,23 @@
     width: 100%;
 }
   
-/*
-.Btn {
-  margin: 10px 50px;
-  display: block;
-  /*align-items: center;*
-  margin: 8em auto;
-  margin-left: 32%;
-}*/
 
 .Btn {
-  /*margin: 10px 50px;*/
   display: block;
-  /*text-align: center;*/
-  /*margin: 0 auto;*/
   margin-top: 10%;
-  /*margin-left: 10%;*/
   text-align: -webkit-center;
   text-align: -moz-center;
 }
 
 .b1 {
-  padding: 30px 80px;
-  display: inline-block;
-  font-family: 'Kanit';
+  padding: 20px 50px;
+  display: inline-block; 
+  font-family: 'Prompt';
   font-size: 25px;
   margin: 20px;
+  border-radius: 12px;
 }
 
-.table {
-  /*align-content: center;*/
+.setBackButton {
+  color: white;
 }

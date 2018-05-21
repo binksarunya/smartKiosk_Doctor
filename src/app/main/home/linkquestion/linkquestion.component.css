@@ -1,12 +1,10 @@
-
-  
   h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
-      font-family: 'Kanit';
+      font-family: 'Prompt';
   }
   
   .example-full-id {
@@ -48,16 +46,6 @@
     margin-left: 25%;
     margin-top: 6%;
   }
-
-  .backButton {
-    font-size: 20px;
-    text-align: left;
-    /*margin-left: 25%;*/
-    margin-top: 2%;
-    font-family: 'Kanit';
-    margin-left: 10%;
-  }
-
   .fa fa-angle-left w3-xlarge {
     text-align: center;
   }
@@ -98,7 +86,7 @@
   .mat-header-cell {
     font-size: 18px;
     font-weight: bold;
-    font-family: 'Kanit';
+    font-family: 'Prompt';
 }
 
 /* box table space of top */ 
@@ -187,11 +175,7 @@
   border-radius: 4px;
   cursor: pointer;
   cursor: hand;
-  font-family: Arial;
-}
-
-button:hover {
-  background-color: #cfd8dc;
+  font-family: 'Prompt';
 }
 
 button.delete {
@@ -200,4 +184,41 @@ button.delete {
   top: -32px;
   background-color: gray !important;
   color: white;
+}
+
+/* ---------------------------------- */
+.setBackButton {
+  color: white;
+}
+.backButton {
+  font-size: 20px;
+  text-align: left;
+  margin-top: 4%;
+  font-family: 'Prompt';
+  margin-left: 0%;
+}
+.panel-heading {
+  font-size: 20px;
+  font-family: 'Prompt';
+  text-align: center;
+}
+.panel-body {
+  font-size: 16px;
+}
+.setHeading1 {
+  padding-left: 3%;
+}
+.setHeading2 {
+  padding-left: 2%;
+}
+.searchSetting {
+  font-size: 16px;
+  align-items: right;
+}
+.example-container {
+  display: flex;
+  flex-direction: column;
+  max-height: 420px;
+  min-width: 300px;
+  overflow: auto;
 }

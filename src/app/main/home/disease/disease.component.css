@@ -23,24 +23,6 @@
       top: 0px;
   }
 
-  /*Disease file*/
-  .w3-jumbo {
-    /*font-size: 27px!important;*/
-    /*text-align: left;
-    margin-left: 25%;
-    margin-top: 6%;*/
-  }
-
-  .backButton {
-    font-size: 20px;
-    text-align: left;
-    /*margin-left: 25%;*/
-    margin-top: 2%;
-    font-family: 'Kanit';
-    margin-left: 10%;
-  }
-  
-
   .fa fa-angle-left w3-xlarge {
     text-align: center;
   }
@@ -91,7 +73,6 @@
   min-width: 150px;
   max-width: 500px;
   width: 100%;
-  /*margin-left: 10%;*/
 }
 
 .example-full-width {
@@ -196,10 +177,6 @@
   font-family: Arial;
 }
 
-button:hover {
-  background-color: #cfd8dc;
-}
-
 button.delete {
   position: relative;
   left: 194px;
@@ -238,4 +215,30 @@ button.delete {
 
 .orChoose {
   text-align: left;
+}
+
+/* ------------------------- */
+
+.setBackButton {
+  color: white;
+}
+.backButton {
+  font-size: 20px;
+  text-align: left;
+  margin-top: 4%;
+  font-family: 'Prompt';
+  margin-left: 0%;
+}
+.panel-heading {
+  font-size: 20px;
+  text-align: center;
+}
+.panel-body {
+  font-size: 16px;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+.example-container-btn {
+  font-family: 'Prompt';
+  align-items: right; 
 }

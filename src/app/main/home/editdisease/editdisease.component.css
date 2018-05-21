@@ -5,7 +5,7 @@
   h4,
   h5,
   h6 {
-      font-family: 'Kanit';
+      font-family: 'Prompt';
   }
   
   .example-full-id {
@@ -22,14 +22,14 @@
   min-width: 150px;
   max-width: 500px;
   width: 100%;
-  
+  font-size: 16px;
 }
   .w3-row-padding img {
       margin-bottom: 20px;
   }
   
   .w3-sidebar {
-      /*width: 150px;*/
+      
       background: #cce6ff;
       height: 100%;
       width: 200px;
@@ -45,16 +45,6 @@
     text-align: left;
     margin-left: 25%;
     margin-top: 6%;
-  }
-
-  .backButton {
-    font-size: 20px;
-    text-align: left;
-    /*margin-left: 25%;*/
-    margin-top: 2%;
-    font-family: 'Kanit';
-    margin-left: 10%;
-    
   }
 
   .fa fa-angle-left w3-xlarge {
@@ -80,8 +70,6 @@
   .mat-table {
     overflow: auto;
     max-height: 700px;
-    
-    /*width: 133%;*/
   }
   
   .mat-header-cell.mat-sort-header-sorted {
@@ -93,33 +81,17 @@
     max-width: 80%;
     margin: 2em auto;
     padding: 0px;
-    /*text-align: center;*/
-    
   }
 
   .mat-header-cell {
     font-size: 18px;
     font-weight: bold;
-    font-family: 'Kanit';
+    font-family: 'Prompt';
 }
 
-/* box table space of top */ 
 .cardBox {
   margin-top: 0.5%;
-  
 }
-
-/*pink circle*/
-  .done[_ngcontent-c1] {
-    position: fixed;
-    bottom: 20px;
-    right: 369px;
-    top: 120px;;
-    color: white;
-  }
-
-
-
 
 .pt{
   padding-top: 10%;
@@ -129,8 +101,6 @@
 .Btn {
   margin: 10px 50px;
   display: block;
-  /*align-items: center;*/
-  /*margin: 8em auto;*/
   text-align: -webkit-center;
   text-align: -moz-center;
   
@@ -198,10 +168,6 @@
   font-family: Arial;
 }
 
-button:hover {
-  background-color: #cfd8dc;
-}
-
 button.delete {
   position: relative;
   left: 194px;
@@ -215,19 +181,60 @@ button.delete {
   padding: 1rem 0 0.5rem 0;
   height: 4.5rem;
   width: 20.5rem;
-  font-family: 'Kanit';
+  font-family: 'Prompt';
   font-size: 18px;
 }
 
 .table {
-  font-family: 'Kanit';
+  font-family: 'Prompt';
   font-size: 20px;
+  width: 100%;
 }
 
 .headTitle {
-  color: #8c8c8c;
+  font-style: normal;
+  font-size: 16px;
 }
 
 .textinbox {
+  text-align: left;
+  font-size: 16px;
+}
+
+/* ------------------------- */
+
+.setBackButton {
+  color: white;
+}
+.backButton {
+  font-size: 20px;
+  text-align: left;
+  margin-top: 4%;
+  font-family: 'Prompt';
+  margin-left: 0%;
+}
+.panel-heading {
+  font-size: 20px;
+  font-family: 'Prompt';
   text-align: center;
+}
+.panel-body {
+  font-size: 16px;
+}
+.setHeading1 {
+  padding-left: 3%;
+}
+.setHeading2 {
+  padding-left: 2%;
+}
+.searchSetting {
+  font-size: 16px;
+  align-items: right;
+}
+.example-container {
+  display: flex;
+  flex-direction: column;
+  max-height: 420px;
+  min-width: 300px;
+  overflow: auto;
 }

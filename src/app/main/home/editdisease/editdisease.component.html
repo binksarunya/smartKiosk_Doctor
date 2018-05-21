@@ -1,11 +1,58 @@
 <button mat-button class="backButton" (click)="back()">
-  <a>
+  <a class="setBackButton">
     <mat-icon>
       <i class="fa fa-angle-left w3-large"></i>
-    </mat-icon>Back</a>
+    </mat-icon>back</a>
 </button>
 
-<div class="Btn">
+
+<div class="container">
+  <div class="panel panel-info">
+    <div class="panel-heading">Edit Disease
+      <i class="material-icons">
+        create
+      </i>
+      <form class="searchSetting">
+        <mat-form-field class="search-input">
+          <input matInput placeholder="Search by Symptom Disease name" [(ngModel)]="search" name="search">
+        </mat-form-field>
+        <i class="fa fa-search w3-xlarge"></i>
+      </form>
+    </div>
+    <div class="panel-body">
+      <div class="example-container">
+        <table class="table">
+          <thead>
+            <tr class="headTitle">
+              <th>ID</th>
+              <th>Disease</th>
+              <th class="setHeading1">Edit</th>
+              <th class="setHeading2">Delete</th>
+            </tr>
+          </thead>
+          <tbody class="textinbox">
+            <tr *ngFor="let disease of diseaselist |filter:search">
+              <td>{{disease.ID}}</td>
+              <td>{{disease.name}}</td>
+              <td>
+                <button mat-button (click)="edit(disease)">
+                  <i class="fa fa-edit w3-xlarge"></i>
+                </button>
+              </td>
+              <td>
+                <button mat-button (click)="delete(disease)">
+                  <i class="fa fa-trash w3-xlarge"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+  <!--<div class="Btn">
   <form class="example-form">
     <mat-form-field class="search-input">
       <input matInput placeholder="Search by Symptom Disease name" [(ngModel)]="search" name="search">
@@ -44,4 +91,4 @@
     </div>
   </mat-card>
 
-</div>
+</div>-->

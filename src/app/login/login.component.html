@@ -1,12 +1,4 @@
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
-<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
-<div class="">
+<div class="" style="background-color:rgba(245, 241, 241, 0.493);">
 
   <img class="img" src="/assets/picture/LOGO.png" />
 
@@ -24,27 +16,30 @@
             <input matInput placeholder="PASSWORD" value="" [(ngModel)]="pass" name="pass" [type]="password">
           </mat-form-field>
         </tr>
-      </form>
-      <font color="red">{{warn}}</font>
-      <input type="submit" value="LOG IN" (click)="login()">
 
-      <br>
-      <br>
+        <br>
+      </form>
       <!-- Remind Passowrd -->
       <div class="Footer">
+        <font color="red">{{warn}}</font>
+        <input type="submit" name="" value="LOG IN" (click)="login()">
 
         <td>
-          <a href="#">Forgot Password </a>
+          <!--<a href="#">Forgot Password </a>-->
+          <button class="bt_register" mat-button color="black">Forget password</button>
         </td>
         <td>
           <a> &nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp; </a>
         </td>
         <td>
-          <a href="#">Register</a>
+          <!-- <a href="#">Register</a> -->
+          <button class="bt_register" mat-button color="black" (click)="goregister()">Register</button>
         </td>
 
       </div>
 
+
     </div>
   </div>
+
 </div>

@@ -30,9 +30,11 @@ img {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top:80px;
+    margin-top: 70px;
     width: 50%;
     max-width: 20%;
+    padding-top: 2%;
+    padding-bottom: 0%;
 }
 
 h2 {
@@ -49,7 +51,7 @@ h2 {
     display: block;
     align-items: center;
     width: 37%;
-    padding: 60px;
+    padding-bottom: 4%;
     margin: 0 auto;
   }
 
@@ -92,13 +94,14 @@ h2 {
     border: none;
     outline: none;
     height: 40px;
-    width: 100%;
-    font-size: 20px;
-    background: #ed292a;
+    width: 60%;
+    font-size: 18px;
+    background: #ff3f40;
     color: #fff;
     border-radius: 20px;
     cursor: pointer;
-    font-family: 'Kanit';
+    font-family: 'Prompt';
+    
   }
 
   .loginBox input:hover {opacity: 0.8}
@@ -110,7 +113,7 @@ h2 {
     text-decoration: none;
     text-align: center;
     display: block;
-    font-family: 'Kanit';
+    font-family: 'Prompt';
   }
   
   
@@ -120,6 +123,10 @@ h2 {
   text-align: -moz-center;
 }
   
+.bt_register {
+  font-family: 'Kanit';
+  font-size: 18px;
+}
 
  
   

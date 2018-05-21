@@ -5,7 +5,7 @@
   h4,
   h5,
   h6 {
-      font-family: 'Kanit';
+      font-family: 'Prompt';
   }
   
   .w3-row-padding img {
@@ -34,10 +34,9 @@
   .backButton {
     font-size: 20px;
     text-align: left;
-    /*margin-left: 25%;*/
-    margin-top: 2%;
-    font-family: 'Kanit';
-    margin-left: 10%;
+    margin-top: 4%;
+    font-family: 'Prompt';
+    margin-left: 0%;
   }
 
   .fa fa-angle-left w3-xlarge {
@@ -75,12 +74,12 @@
   .mat-header-cell {
     font-size: 20px;
     font-weight: bold;
-    font-family: 'Kanit';
+    font-family: 'Prompt';
 }
 
 .mat-cell {
     font-size: 18px;
-    font-family: 'Kanit';
+    font-family: 'Prompt';
 }
 
 /* box table space of top */ 
@@ -91,11 +90,10 @@
 
 /*input feild*/
 .example-form {
- 
     min-width: 150px;
     max-width: 500px;
     width: 100%;
-    /*margin-left: 10%;*/
+    font-size: 16px;
 }
   
 .example-full-width {
@@ -119,7 +117,9 @@
 }
 
 .addBtn {
-   width: 100px; 
+   width: 100px;
+   font-family: 'Prompt';
+   font-size: 12px; 
 }
 
 .Btn {
@@ -135,7 +135,7 @@
 .b1 {
   padding: 30px 80px;
   display: inline-block;
-  font-family: 'Kanit';
+  font-family: 'Prompt';
   font-size: 25px;
   margin: 20px;
 }
@@ -202,10 +202,6 @@
   font-family: Arial;
 }
 
-button:hover {
-  background-color: #cfd8dc;
-}
-
 button.delete {
   position: relative;
   left: 194px;
@@ -219,7 +215,7 @@ button.delete {
   padding: 1rem 0 0.5rem 0;
   height: 4.5rem;
   width: 20.5rem;
-  font-family: 'Kanit';
+  font-family: 'Prompt';
   font-size: 18px;
 }
 
@@ -228,19 +224,43 @@ button.delete {
   padding: 1rem 0 0.5rem 0;
   height: 4.5rem;
   width: 21.5rem;
-  font-family: 'Kanit';
+  font-family: 'Prompt';
   font-size: 18px;
 }
 
 .table {
-  font-family: 'Kanit';
-  font-size: 20px;
-}
-
-.headTitle {
-  color: #8c8c8c;
+  font-family: 'Prompt';
+  font-size: 16px;
+  font-style: normal;
 }
 
 .textinbox {
-  text-align: center;
+  text-align: left;
+}
+
+/* ------------------------*/
+.setBackButton {
+  color: white;
+}
+
+.setHeading1 {
+  padding-left: 3%;
+}
+.setHeading2 {
+  padding-left: 2%;
+}
+.panel-heading {
+  text-align: -webkit-center;
+  text-align: -moz-center;
+}
+.panel-body {
+  text-align: -webkit-center;
+  text-align: -moz-center;
+}
+.example-container {
+  display: flex;
+  flex-direction: column;
+  max-height: 250px;
+  min-width: 300px;
+  overflow: auto;
 }

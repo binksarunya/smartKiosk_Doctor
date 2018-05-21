@@ -34,10 +34,9 @@
   .backButton {
     font-size: 20px;
     text-align: left;
-    /*margin-left: 25%;*/
-    margin-top: 2%;
-    font-family: 'Kanit';
-    margin-left: 10%;
+    margin-left: 0%;
+    margin-top: 4%;
+    font-family: 'Prompt';
   }
 
   .fa fa-angle-left w3-xlarge {
@@ -237,16 +236,16 @@ button.delete {
 }
 
 .table {
-  font-family: 'Kanit';
-  font-size: 20px;
+  font-family: 'Prompt';
+  font-size: 16px;
   width: 100%;
 }
 
 .headTitle {
-  color: #8c8c8c;
-  /*text-align: -webkit-center;*/
+
+  font-family: 'Prompt';
   text-align: -moz-center;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .textinbox {
@@ -279,6 +278,18 @@ button.delete {
 
   hr {
     width: 30%;
+  }
+  /* ----------------------------------- */
+
+  .setBackButton {
+    color: white;
+  }
+
+  .panel-heading {
+    font-family: 'Prompt';
+    font-size: 25px;
+    text-align: -webkit-center;
+    text-align: -moz-center;
   }
 
   
