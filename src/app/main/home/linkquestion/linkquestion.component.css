@@ -222,3 +222,17 @@ button.delete {
   min-width: 300px;
   overflow: auto;
 }
+.textinbox {
+  text-align: left;
+  font-size: 16px;
+}
+.table {
+  font-family: 'Prompt';
+  font-size: 20px;
+  width: 100%;
+}
+.headTitle {
+  font-style: normal;
+  font-size: 16px;
+}
+
