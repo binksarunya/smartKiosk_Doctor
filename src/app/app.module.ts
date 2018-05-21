@@ -59,6 +59,7 @@ import { HeadbarComponent } from './headbar/headbar.component';
 import { DiseasemanageComponent } from './diseasemanage/diseasemanage.component';
 import { QuestionmanageComponent } from './questionmanage/questionmanage.component';
 import { LinkquestionComponent } from './main/home/linkquestion/linkquestion.component';
+import { RegisterComponent } from './register/register.component';
 
 
 
@@ -79,6 +80,7 @@ import { LinkquestionComponent } from './main/home/linkquestion/linkquestion.com
     DiseasemanageComponent,
     QuestionmanageComponent,
     LinkquestionComponent,
+    RegisterComponent,
     
 
 

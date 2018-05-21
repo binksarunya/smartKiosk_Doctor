@@ -22,6 +22,7 @@
               <tr class="headTitle">
                 <th scope="col">Date queue</th>
                 <th scope="col">ID Card</th>
+                <th scope="col">Status</th>
                 <th scope="col">Diagnosis</th>
               </tr>
             </thead>
@@ -29,6 +30,7 @@
               <tr *ngFor="let q of queue">
                 <td>{{q.que}}</td>
                 <td>{{q.patientID}}</td>
+                <td (mouseenter)="checkstr()">{{q.status}}</td>
                 <td>
                   <button mat-button (click)="diagnosis(q.patientID)">
                     <i class="fa fa-edit w3-xlarge"></i>
@@ -73,6 +75,9 @@
                   </mat-form-field>
                 </tr>
                 <button mat-raised-button color="warn" (click)="cancle()">cancle</button>
+                <td>
+                   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+                </td>
                 <button mat-raised-button color="primary" (click)="ok()">Finish Diagnosis</button>
 
               </table>
@@ -92,7 +97,7 @@
                   <th></th>
                 </tr>
                 <tr *ngFor="let d of diagshow">
-                  - : {{d.disease}} :::::: {{d.percen}} %
+                  - : {{d.disease}} &nbsp;::::::&nbsp; {{d.percen}} %
 
                 </tr>
               </table>
@@ -109,7 +114,7 @@
                   <th></th>
                 </tr>
                 <tr>
-                  wait i am working!
+                  Processing
                 </tr>
               </table>
             </div>

@@ -17,11 +17,16 @@ import { EditquestionComponent } from '../main/home/editquestion/editquestion.co
 import { QuestionmanageComponent } from '../questionmanage/questionmanage.component';
 import { DiseasemanageComponent } from '../diseasemanage/diseasemanage.component';
 import { LinkquestionComponent } from '../main/home/linkquestion/linkquestion.component';
+import { RegisterComponent } from '../register/register.component';
 
 const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'register',
+    component: RegisterComponent,
   },
   {
     path: 'main',
