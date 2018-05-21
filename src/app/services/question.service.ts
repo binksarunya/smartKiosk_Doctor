@@ -17,7 +17,7 @@ export class QuestionService {
   constructor(private http: Http) { }
 
   addquestion(data: any) {
-    //console.log(data);
+    console.log(data);
     let url = Connect.getHostUrl() + '/addquestion.php'
     let header = { headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' }) };
     return this.http.post(url, data, header).toPromise();

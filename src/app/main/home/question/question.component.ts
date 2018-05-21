@@ -31,6 +31,7 @@ export class QuestionComponent implements OnInit {
   public answerset:any;
   public answerid:string;
   public ansidset:Array<string>;
+  public checkfirst:boolean;
 
 
   public quest: Question;
@@ -38,6 +39,7 @@ export class QuestionComponent implements OnInit {
   constructor(private rout: Router, private symptom: AddsymptomService,private questservice:QuestionService) {
     this.getbody();
     this.setnull();
+    this.checkfirst =false;
     this.answerid = null;
     this.ansidset = new Array();
     this.ans = new Answer();
@@ -127,7 +129,7 @@ export class QuestionComponent implements OnInit {
           //   this.stradd="add success!";
           //   this.color="green";
           // }
-
+          this.getanswer();
         });
       this.ans = new Answer();
       this.setnullans();
@@ -148,6 +150,7 @@ export class QuestionComponent implements OnInit {
   }
   addquestion() {
     if (this.id != null && this.question != null && this.body != null) {
+      this.quest.checkfirst=this.checkfirst;
       this.quest.question = this.question;
       this.quest.id = this.id;
       // this.quest.lv = this.lv;
@@ -187,6 +190,7 @@ export class QuestionComponent implements OnInit {
     this.question = null;
     this.lv = null;
     this.body = null;
+    this.checkfirst =false;
   }
   setnullans() {
     this.ans.ans = null;

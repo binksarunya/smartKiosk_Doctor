@@ -4,4 +4,5 @@ export class Question {
     lv:string;
     body:string; 
     answer:any;
+    checkfirst:boolean;
 }
