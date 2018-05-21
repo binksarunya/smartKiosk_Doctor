@@ -11,6 +11,8 @@ export class LinkquestionComponent implements OnInit {
   public question: any;
   public search: string;
   public link:boolean;
+  public questionlink:any;
+  public answerser:any;
   constructor(private rout: Router, private quest: QuestionService) {
     this.link = false;
    }
@@ -24,8 +26,20 @@ export class LinkquestionComponent implements OnInit {
   }
 
   linkquestion(quest:any){
-      console.log(quest);
+      this.questionlink = quest;
+      //console.log(quest);
       this.link=true;
+      this.answerser= null;
+      this.getanswerforlink(quest.ID);
+  }
+
+  getanswerforlink(questid:string){
+    this.quest.getanswerid(questid).subscribe((Response)=>{
+      if(Response==true){
+        this.answerser = this.quest.answerbyid;
+        console.log(this.answerser);
+      }
+    });
   }
 
   public getquest() {
@@ -35,12 +49,23 @@ export class LinkquestionComponent implements OnInit {
         if (response == true) {
           this.question = this.quest.question;
           //this.settable();
-          console.log(this.question);
+          //console.log(this.question);
 
         } else {
 
         }
       });
+  }
+
+  public updatenextquestion(data:any){
+    //console.log(data);
+    this.quest.updatenextquestion(data).then((Response)=>{
+
+    });
+  }
+
+  hid(){
+    this.link = false;
   }
 
 }

@@ -8,7 +8,7 @@
 
 <div class="container">
   <div class="panel panel-info">
-    <div class="panel-heading">Edit Question
+    <div class="panel-heading">Question Table
       <i class="material-icons">
         create
       </i>
@@ -27,7 +27,6 @@
               <th scope="col">Question ID</th>
               <th scope="col">Question</th>
               <th scope="col">Body point</th>
-              <th scope="col">lv question</th>
               <th scope="col">Edit</th>
               <th scope="col">Delete</th>
             </tr>
@@ -37,7 +36,6 @@
               <td>{{quest.ID}}</td>
               <td>{{quest.question}}</td>
               <td>{{quest.body}}</td>
-              <td>{{quest.lv}}</td>
               <td>
                 <button mat-button (click)="edit(quest)">
                   <i class="fa fa-edit w3-xlarge"></i>
@@ -56,6 +54,58 @@
   </div>
 </div>
 
+<div class="Btn" *ngIf="link">
+  <div class="container">
+    <div class="panel panel-info">
+      <div class="panel-heading">Edit Question
+        <i class="material-icons">
+          create
+        </i>
+      </div>
+      <div class="panel-body">
+
+
+        <div class="example-container">
+          <mat-form-field class="example-full-id">
+            <input matInput placeholder="question id" [(ngModel)]="editquestion.ID" name="editquestion.ID" disabled="true">
+          </mat-form-field>
+          <mat-form-field class="example-full-id">
+            <input matInput placeholder="question Detail" [(ngModel)]="editquestion.question" name="editquestion.question">
+          </mat-form-field>
+
+          <table class="table">
+            <thead>
+              <tr class="headTitle">
+                <th scope="col">Answer ID</th>
+                <th scope="col">Answer</th>
+                <th scope="col">Symptom</th>
+                <th scope="col">delete</th>
+              </tr>
+            </thead>
+            <tbody class="textinbox">
+              <tr *ngFor="let ans of answerser">
+                <td>{{ans.ID}}</td>
+                <td>{{ans.answer}}</td>
+                <td>{{ans.symptomid}}</td>
+                <td>
+                  <button mat-button (click)="deleteans(ans)">
+                    <i class="fa fa-trash w3-xlarge"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <button mat-button color="warn" (click)="cancle()">cancle</button>
+        <button mat-button color="accent" (click)="okedit()">ok</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 <!--<div class="Btn">
   <form class="example-form">
@@ -72,7 +122,6 @@
             <th scope="col">Question ID</th>
             <th scope="col">Question</th>
             <th scope="col">Body point</th>
-            <th scope="col">lv question</th>
             <th scope="col">Edit</th>
             <th scope="col">Delete</th>
           </tr>
@@ -82,7 +131,6 @@
             <td>{{quest.ID}}</td>
             <td>{{quest.question}}</td>
             <td>{{quest.body}}</td>
-            <td>{{quest.lv}}</td>
             <td>
               <button mat-button (click)="edit(quest)">
                 <i class="fa fa-edit w3-xlarge"></i>
