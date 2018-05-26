@@ -28,11 +28,15 @@ export class AddsymptomComponent implements OnInit {
   public displayedColumns: any;
   public dataSource: any;
 
+  public checkedit : boolean;
+  public editdata : any;
+
   constructor(private rout: Router, private symptom: AddsymptomService) {
     this.sname = null;
     this.stradd = null;
     this.color = null;
     this.stredit = false;
+    this.checkedit = false;
   }
 
   ngOnInit() {
@@ -47,12 +51,27 @@ export class AddsymptomComponent implements OnInit {
   }
   
   edit(data: any) {
-    console.log(data);
+   // console.log(data);
+   this.editdata = data;
+   this.checkedit = true;
+   
   }
   delete(data: any) {
-    console.log(data);
+    //console.log(data);
+    this.symptom.deletedata(data).then(Response=>{
+      this.get();
+    });
   }
-
+  cancle(){
+    this.checkedit=false;
+    this.get();
+  }
+  ok(){
+    this.symptom.saveedit(this.editdata).then(Response=>{
+      this.get();
+      this.checkedit=false;
+    });
+  }
   editcancle() {
     this.stredit = false;
     this.get();

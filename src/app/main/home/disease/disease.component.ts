@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Disease } from '../../../models/disease';
 import { AddsymptomService } from '../../../services/addsymptom.service';
-import { DiseaseService } from'../../../services/disease.service';
+import { DiseaseService } from '../../../services/disease.service';
 
 
 @Component({
@@ -16,17 +16,28 @@ export class DiseaseComponent implements OnInit {
   public symptomshow: any;
   public search: string;
   public selectsymptom: Array<any>;
-  public str:string;
-  public color:string;
+  public str: string;
+  public color: string;
+  public show: boolean;
 
-  constructor(private rout: Router, private symptom: AddsymptomService,private diseaseservice:DiseaseService) {
+  constructor(private rout: Router, private symptom: AddsymptomService, private diseaseservice: DiseaseService) {
     this.disease = new Disease();
-    this.disease.name=null;
+    this.disease.name = null;
     this.selectsymptom = [];
+    this.show = false;
   }
 
   ngOnInit() {
+    //this.getsymptomlist();
+  }
+  click(data) {
     this.getsymptomlist();
+    if (this.search.length == 0) {
+      this.show = true;
+    } else {
+      this.show = false;
+    }
+    // console.log(this.search.length);
   }
 
   getsymptomlist() {
@@ -40,6 +51,10 @@ export class DiseaseComponent implements OnInit {
 
         } else {
 
+        }
+
+        if (this.show) {
+          this.symptomshow = null;
         }
       });
   }
@@ -68,33 +83,33 @@ export class DiseaseComponent implements OnInit {
     }
   }
   adddisease() {
-    if(this.disease.name!=null){
-    this.disease.symptomlist=this.selectsymptom;
-    this.diseaseservice.adddisease(this.disease).then(
-      (response) => {
-        let data = response.json();
-        if(data.Error=="false"){
-          this.disease = new Disease();
-          this.selectsymptom = [];
-          this.disease.name=null;
-          this.str="add success!";
-          this.color="green";
-        }else{
-          this.str="fail add";
-          this.color="red";
-        }
-       // console.log(data);
-        //this.get();
-       // console.log(data);
-        //this.stredit =false;
-      });
+    if (this.disease.name != null) {
+      this.disease.symptomlist = this.selectsymptom;
+      this.diseaseservice.adddisease(this.disease).then(
+        (response) => {
+          let data = response.json();
+          if (data.Error == "false") {
+            this.disease = new Disease();
+            this.selectsymptom = [];
+            this.disease.name = null;
+            this.str = "add success!";
+            this.color = "green";
+          } else {
+            this.str = "fail add";
+            this.color = "red";
+          }
+          // console.log(data);
+          //this.get();
+          // console.log(data);
+          //this.stredit =false;
+        });
 
-  }else{
-    this.str="fill name";
-    this.color="red";
+    } else {
+      this.str = "fill name";
+      this.color = "red";
 
+    }
   }
-}
 
   back() {
     this.rout.navigate(['/main/diseasemanage']);

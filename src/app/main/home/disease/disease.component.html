@@ -38,7 +38,7 @@
 
       <form class="example-form">
         <mat-form-field class="search-input">
-          <input matInput placeholder="Search by Symptom name" [(ngModel)]="search" name="search">
+          <input matInput placeholder="Search by Symptom name" (keyup)="click($event)"[(ngModel)]="search" name="search">
         </mat-form-field>
         <i class="fa fa-search w3-meduim"></i>
       </form>
