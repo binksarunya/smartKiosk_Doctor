@@ -25,6 +25,7 @@
               <mat-form-field class="example-full-width">
                 <input matInput placeholder="question detail ?" [(ngModel)]="question" name="question">
               </mat-form-field>
+              <mat-checkbox [(ngModel)]="checkfirst" name="checkfirst">Is a First Question?</mat-checkbox>
 
               <mat-select class="pt" placeholder="Select question body" [(ngModel)]="body" name="bshow">
                 <mat-option *ngFor="let s of bshow" value="{{s}}">{{s}}</mat-option>
