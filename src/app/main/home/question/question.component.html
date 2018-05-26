@@ -20,18 +20,19 @@
           <div class="setPanelLeft">
             <form class="example-form">
               <mat-form-field class="example-full-id">
-                <input matInput placeholder="question id" [(ngModel)]="id" name="id">
+                <input matInput placeholder="Question ID" [(ngModel)]="id" name="id">
               </mat-form-field>
               <mat-form-field class="example-full-width">
-                <input matInput placeholder="question detail ?" [(ngModel)]="question" name="question">
+                <input matInput placeholder="Question name" [(ngModel)]="question" name="question">
               </mat-form-field>
               <mat-checkbox [(ngModel)]="checkfirst" name="checkfirst">Is a First Question?</mat-checkbox>
+              <br><br>
 
-              <mat-select class="pt" placeholder="Select question body" [(ngModel)]="body" name="bshow">
+              <mat-select placeholder="Select body" [(ngModel)]="body" name="bshow">
                 <mat-option *ngFor="let s of bshow" value="{{s}}">{{s}}</mat-option>
-
               </mat-select>
 
+              &nbsp;&nbsp;&nbsp;&nbsp;
               <mat-form-field class="example-full-id">
                 <input type="text" placeholder="answer ID" aria-label="Number" matInput [(ngModel)]="answerid" [matAutocomplete]="auto2"
                   name="answerid">
@@ -42,11 +43,19 @@
                 </mat-autocomplete>
               </mat-form-field>
 
-              <button mat-raised-button (click)="addans(answerid)">+</button>
+              <!--<button mat-raised-button (click)="addans(answerid)">+</button>-->
+              <button mat-mini-fab (click)="addans(answerid)">
+                <mat-icon aria-label="Example icon-button with a heart icon">
+                  <i class="material-icons">
+                    add
+                  </i>
+                </mat-icon>
+              </button>
 
+              <br><br><br>
 
               <div class="btnBottom">
-                <button class="setButton" mat-raised-button mat-button color="accent" (click)="cancle()">cancle</button>
+                <button class="setButton" mat-raised-button mat-button color="warn" (click)="cancle()">cancle</button>
                 <button class="setButton" mat-raised-button mat-button color="primary" (click)="addquestion()"> ADD Question</button>
               </div>
 
@@ -71,6 +80,8 @@
           </div>
 
         </div>
+
+
         <div class="w3-container w3-green w3-cell">
           <div class="example-container">
             <table class="table">
@@ -178,159 +189,3 @@
     </div>
   </div>
 </div>
-
-
-<!--<div class="Btn">
-
-  <mat-card class="cardBox">
-    <div class="example-container">
-      <br>
-      <h2>Add Question</h2>
-
-      <form class="example-form">
-        <mat-form-field class="example-full-id">
-          <input matInput placeholder="question id" [(ngModel)]="id" name="id">
-        </mat-form-field>
-        <mat-form-field class="example-full-width">
-          <input matInput placeholder="question detail ?" [(ngModel)]="question" name="question">
-        </mat-form-field>
-
-        <mat-checkbox [(ngModel)]="checkfirst" name="checkfirst" >Is a First Question Of Body Point?</mat-checkbox>
-
-        <mat-select class="pt" placeholder="Select question body" [(ngModel)]="body" name="bshow">
-          <mat-option *ngFor="let s of bshow" value="{{s}}">{{s}}</mat-option>
-
-        </mat-select>
-
-        <table class="table">
-          <thead>
-            <tr class="headTitle">
-              <th scope="col">ANSWER ID</th>
-              <th scope="col">Delete</th>
-            </tr>
-          </thead>
-          <tbody class="textinbox">
-            <tr *ngFor="let answer of ansidset |filter:search">
-              <td>{{answer}}</td>
-              <td>
-                <button mat-button (click)="deleteanswerinquestion(answer)">
-                  X
-                </button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-
-        <mat-form-field class="example-full-id">
-          <input type="text" placeholder="answer ID" aria-label="Number" matInput [(ngModel)]="answerid" [matAutocomplete]="auto2"
-            name="answerid">
-          <mat-autocomplete #auto2="matAutocomplete">
-            <mat-option *ngFor="let option of answerset |filter:answerid" [value]="option.ID">
-              {{ option.ID }}
-            </mat-option>
-          </mat-autocomplete>
-        </mat-form-field>
-
-        <button mat-raised-button (click)="addans(answerid)">+</button>
-
-
-        <div class="btnBottom">
-          <button mat-raised-button mat-button color="accent" (click)="cancle()">cancle</button>
-          <button mat-raised-button mat-button color="primary" (click)="addquestion()"> ADD Question</button>
-        </div>
-
-        <div class="">
-          <font class="btnBottom" color="{{color}}">{{stradd}}</font>
-        </div>
-        <br>
-
-        <div class="example-full-width" *ngFor="let answer2 of answer">
-          <mat-form-field class="example-full-id">
-            <input matInput placeholder="answer" value="{{answer2.ans}}" name="answer2.ans" disabled="true">
-          </mat-form-field>
-          <mat-form-field class="example-full-id2">
-            <input matInput placeholder="answer id" value="{{answer2.ansid}}" name="answer2.ansid" disabled="true">
-          </mat-form-field>
-          <mat-form-field class="example-full-id">
-            <input type="text" placeholder="symptom" matInput value="{{answer2.symptom}}" name="answer2.symptom" disabled="true">
-          </mat-form-field>
-        </div>
-
-      </form>
-    </div>
-  </mat-card>
-
-
-
-
-  <mat-card class="cardBox">
-    <div class="example-container">
-      <h2>Add Answers</h2>
-
-      <div class="pt">
-
-      </div>
-      <div class="example-full-width">
-        <mat-form-field class="example-full-id2">
-          <input matInput placeholder="answer id" [(ngModel)]="ans.ansid" name="ans.ansid">
-        </mat-form-field>
-        <mat-form-field class="example-full-id">
-          <input matInput placeholder="answer" [(ngModel)]="ans.ans" name="ans.ans">
-        </mat-form-field>
-
-        <mat-form-field class="example-full-id">
-          <input type="text" placeholder="symptom" aria-label="Number" matInput [(ngModel)]="ans.symptom" [matAutocomplete]="auto"
-            name="ans.symptom">
-          <mat-autocomplete #auto="matAutocomplete">
-            <mat-option *ngFor="let option of symptomlist |filter:ans.symptom" [value]="option.name">
-              {{ option.name }}
-            </mat-option>
-          </mat-autocomplete>
-        </mat-form-field>
-
-      </div>
-      <div class="pt">
-        <font color="red">{{strans}}</font>
-        <button mat-raised-button class="addchoiceBtn" (click)="addanswer()"> Add answer choice </button>
-        <br>
-      </div>
-
-    </div>
-  </mat-card>
-
-  <form class="example-form">
-    <mat-form-field class="search-input">
-      <input matInput placeholder="Search by answer id" [(ngModel)]="search" name="search">
-    </mat-form-field>
-    <i class="fa fa-search w3-xlarge"></i>
-  </form>
-  <br>
-  <br>
-  <mat-card class="cardBox">
-    <div class="example-container mat-elevation-z8">
-      <table class="table">
-        <thead>
-          <tr class="headTitle">
-            <th scope="col">Answer ID</th>
-            <th scope="col">Answer Detail</th>
-            <th scope="col">symptom of Answer</th>
-            <th scope="col">Delete</th>
-          </tr>
-        </thead>
-        <tbody class="textinbox">
-          <tr *ngFor="let answer of answerset |filter:search">
-            <td>{{answer.ID}}</td>
-            <td>{{answer.answer}}</td>
-            <td>{{answer.symptomid}}</td>
-
-            <td>
-              <button mat-button (click)="delete(answer)">
-                <i class="fa fa-trash w3-xlarge"></i>
-              </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </mat-card>
-</div>-->

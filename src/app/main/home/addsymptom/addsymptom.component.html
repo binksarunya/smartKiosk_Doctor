@@ -19,7 +19,7 @@
           <mat-form-field class="symptom-input">
             <input matInput placeholder="Symptom name" [(ngModel)]="sname" name="sname">
           </mat-form-field>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;
           <button mat-raised-button class="addBtn" mat-button color="accent" (click)="adds()"> ADD </button>
         </td>
       </form>
@@ -32,19 +32,29 @@
   </div>
 </div>
 
-<div class="container" *ngIf="checkedit">
-  <mat-card>
-    <mat-form-field>
-      <input matInput placeholder="Symptom ID" [(ngModel)]="editdata.ID" disabled="true">
-    </mat-form-field>
-    <mat-form-field>
-        <input matInput placeholder="Symptom name" [(ngModel)]="editdata.name" >
-      </mat-form-field>
 
-      <button mat-button color="warn" (click)="cancle()">cancle</button>
-      <button mat-button color="accent" (click)="ok()">OK</button>
-  </mat-card>
+<div class="container" *ngIf="checkedit">
+  <div class="panel panel-info">
+    <div class="panel-heading">Edit
+
+    </div>
+    <div class="panel-body">
+      <div class="example-container">
+        <mat-form-field>
+          <input matInput placeholder="Symptom ID" [(ngModel)]="editdata.ID" disabled="true">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Symptom name" [(ngModel)]="editdata.name">
+        </mat-form-field>
+
+
+      </div>
+      <button mat-raised-button color="warn" (click)="cancle()">cancle</button>
+      <button mat-raised-button color="primary" (click)="ok()">OK</button>
+    </div>
+  </div>
 </div>
+
 
 <div class="container">
   <div class="panel panel-info">

@@ -223,3 +223,6 @@ button.delete {
 .setSearch {
   text-align: center;
 }
+mat-select {
+  width: 40%;
+}

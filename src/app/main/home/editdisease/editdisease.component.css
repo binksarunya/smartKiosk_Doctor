@@ -220,6 +220,9 @@ button.delete {
 }
 .panel-body {
   font-size: 16px;
+  text-align: -webkit-center;
+  text-align: -moz-center;
+  
 }
 .setHeading1 {
   padding-left: 3%;
@@ -233,8 +236,11 @@ button.delete {
 }
 .example-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
   max-height: 420px;
   min-width: 300px;
   overflow: auto;
+}
+.container {
+  padding-left: 0;
 }

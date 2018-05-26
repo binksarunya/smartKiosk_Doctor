@@ -52,18 +52,70 @@
   </div>
 
   <div class="container" *ngIf="checkedit">
+    <div class="container">
+      <div class="panel panel-info">
+        <div class="panel-heading">Edit
+        </div>
+        <div class="panel-body">
+
+          <mat-form-field>
+            <input matInput placeholder="Disease ID" [(ngModel)]="editdata.ID" disabled="true">
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput placeholder="Disease name" [(ngModel)]="editdata.name">
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput placeholder="Disease name" [(ngModel)]="editdata.detail">
+          </mat-form-field>
+
+          <table class="table">
+            <thead>
+              <tr class="headTitle">
+                <th>symptom ID</th>
+                <th>symptom Detail</th>
+                <!-- <th class="setHeading1">Edit</th> -->
+                <th class="setHeading2">Delete</th>
+              </tr>
+            </thead>
+            <tbody class="textinbox">
+              <tr *ngFor="let symptom of editsymptom">
+                <td>{{symptom.ID}}</td>
+                <td>{{symptom.name}}</td>
+                <td>
+                  <button mat-button (click)="deletesymptom(symptom)">
+                    <i class="fa fa-trash w3-xlarge"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+
+          <button mat-raised-button color="warn" (click)="cancle()">cancle</button>
+          <button mat-raised-button color="primary" (click)="ok()">OK</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!--<div class="container" *ngIf="checkedit">
     <mat-card>
       <mat-form-field>
         <input matInput placeholder="Disease ID" [(ngModel)]="editdata.ID" disabled="true">
-
-
       </mat-form-field>
+
       <mat-form-field>
         <input matInput placeholder="Disease name" [(ngModel)]="editdata.name">
       </mat-form-field>
+
       <mat-form-field>
         <input matInput placeholder="Disease name" [(ngModel)]="editdata.detail">
       </mat-form-field>
+
     </mat-card>
     <mat-card>
       <table class="table">
@@ -71,7 +123,7 @@
           <tr class="headTitle">
             <th>symptom ID</th>
             <th>symptom Detail</th>
-            <!-- <th class="setHeading1">Edit</th> -->
+            <!-- <th class="setHeading1">Edit</th> --
             <th class="setHeading2">Delete</th>
           </tr>
         </thead>
@@ -86,51 +138,9 @@
             </td>
           </tr>
         </tbody>
-      </table> 
+      </table>
       <button mat-button color="warn" (click)="cancle()">cancle</button>
       <button mat-button color="accent" (click)="ok()">OK</button>
-     
+
     </mat-card>
-  </div>
-
-
-  <!--<div class="Btn">
-  <form class="example-form">
-    <mat-form-field class="search-input">
-      <input matInput placeholder="Search by Symptom Disease name" [(ngModel)]="search" name="search">
-    </mat-form-field>
-    <i class="fa fa-search w3-xlarge"></i>
-  </form>
-
-  <mat-card class="cardBox">
-    <div class="example-container mat-elevation-z8">
-      <table class="table">
-        <thead>
-          <tr class="headTitle">
-            <th scope="col">ID</th>
-            <th scope="col">Disease</th>
-            <th scope="col">Edit</th>
-            <th scope="col">Delete</th>
-          </tr>
-        </thead>
-        <tbody class="textinbox">
-          <tr *ngFor="let disease of diseaselist |filter:search">
-            <td>{{disease.ID}}</td>
-            <td>{{disease.name}}</td>
-            <td>
-              <button mat-button (click)="edit(disease)">
-                <i class="fa fa-edit w3-xlarge"></i>
-              </button>
-            </td>
-            <td>
-              <button mat-button (click)="delete(disease)">
-                <i class="fa fa-trash w3-xlarge"></i>
-              </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </mat-card>
-
-</div>-->
+  </div>-->
