@@ -5,7 +5,6 @@
     </mat-icon>back</a>
 </button>
 
-
 <div class="container">
   <div class="panel panel-info">
     <div class="panel-heading">Add Disease
@@ -17,38 +16,37 @@
       <form class="example-form">
         <td>
           <mat-form-field class="disease-input">
-            <input matInput placeholder="Disease name" [(ngModel)]="disease.name" name="disease.name">
+            <input matInput placeholder="Disease ID" [(ngModel)]="disease.name" name="disease.name">
           </mat-form-field>
           <br>
         </td>
       </form>
 
       <br>
-
       <form class="example-form">
         <mat-form-field class="search-input">
-          <input matInput placeholder="Detail of Disease" [(ngModel)]="disease.detail" name="disease.detail">
+          <input matInput placeholder="Disease name" [(ngModel)]="disease.detail" name="disease.detail">
         </mat-form-field>
-
       </form>
+
       <br>
-
-
-      <h3 class="orChoose">Select the symptoms that are relevant.</h3>
-
+      <h5 class="orChoose">Please search the symptoms that are relevant.</h5>
       <form class="example-form">
         <mat-form-field class="search-input">
-          <input matInput placeholder="Search by Symptom name" (keyup)="click($event)"[(ngModel)]="search" name="search">
+          <input matInput placeholder="Search by Symptom name" (keyup)="click($event)" [(ngModel)]="search" name="search">
         </mat-form-field>
         <i class="fa fa-search w3-meduim"></i>
       </form>
-      <br>
-      <button mat-button color="primary" (click)="select(symptom)" *ngFor="let symptom of symptomshow|filter:search">{{symptom.name}}</button>
 
-      <div>
-        <div *ngFor="let symptom of selectsymptom">
-          <button mat-button mat-button class="buttonSymptom" color="accent" (click)="deletesymptom(symptom)"> {{symptom.name}} </button>
-        </div>
+      <br>
+      <div class="setBoxSize">
+        <button mat-button color="primary" (click)="select(symptom)" *ngFor="let symptom of symptomshow|filter:search">{{symptom.name}}</button>
+      </div>
+
+      <hr>
+      <h5 class="orChoose">Symptoms that your select.</h5>
+      <div *ngFor="let symptom of selectsymptom">
+        <button mat-button class="buttonSymptom" color="accent" (click)="deletesymptom(symptom)"> {{symptom.name}} </button>
       </div>
 
       <hr>
@@ -65,63 +63,3 @@
     <!-- end panel-body-->
 
   </div>
-
-
-  <!--
-<div class="Btn">
-
-  <mat-card class="cardBox">
-    <div class="example-container">
-      <br>
-      <h2>Add Disease</h2>
-
-      <form class="example-form">
-        <td>
-          <mat-form-field class="disease-input">
-            <input matInput placeholder="Disease name" [(ngModel)]="disease.name" name="disease.name">
-          </mat-form-field>
-          <br>
-        </td>
-      </form>
-      <br>
-
-      <form class="example-form">
-        <mat-form-field class="search-input">
-          <input matInput placeholder="Detail of Disease" [(ngModel)]="disease.detail" name="disease.detail">
-        </mat-form-field>
-
-      </form>
-      <br>
-
-      <form class="example-form">
-        <mat-form-field class="search-input">
-          <input matInput placeholder="Search by Symptom name" [(ngModel)]="search" name="search">
-        </mat-form-field>
-        <i class="fa fa-search w3-xlarge"></i>
-      </form>
-   
-      <br>
-    </div>
-    <br>
-
-    <h3 class="orChoose">Choose symptoms</h3>
-    <div>
-      <div *ngFor="let symptom of selectsymptom">
-       
-        <button mat-button mat-button class="buttonSymptom" color="accent" (click)="deletesymptom(symptom)"> {{symptom.name}} </button>
-      </div>
-    </div>
-
-    <button mat-button color="primary" (click)="select(symptom)" *ngFor="let symptom of symptomshow|filter:search">{{symptom.name}}</button>
-  </mat-card>
-</div>
-
-<div class="example-container-btn">
-  <button mat-raised-button class="addBtn" mat-button color="accent" (click)="adddisease()"> ADD </button>
-</div>
-<br>
-<div class="example-container-btn">
-  <font class="" color="{{color}}">{{str}}</font>
-</div>
-
--->
