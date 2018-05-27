@@ -82,9 +82,9 @@
                 <td>
                   <mat-form-field class="example-full-id">
                     <input type="text" placeholder="answer ID" aria-label="Number" matInput [(ngModel)]="ans.nextquestionID" [matAutocomplete]="auto2"
-                      name="ans.nextquestionID">
+                      name="ans.nextquestionID" (keyup)="updatenextquestion(ans)">
                     <mat-autocomplete #auto2="matAutocomplete">
-                      <mat-option *ngFor="let option of questionall |filter:ans.nextquestionID" [value]="option.ID">
+                      <mat-option *ngFor="let option of questionall |filter:ans.nextquestionID" [value]="option.ID" (click)="updatenextquestion(ans)">
                         {{ option.ID }}
                       </mat-option>
                     </mat-autocomplete>
@@ -96,10 +96,10 @@
               </tr>
             </tbody>
           </table>
-          <button mat-button color="warn" (click)="hid()">cancle</button>
-          <button mat-button color="accent" (click)="hid()">ok</button>
 
         </div>
+        <button mat-raised-button color="warn" (click)="hid()">cancle</button>
+        <button mat-raised-button color="primary" (click)="hid()">OK</button>
       </div>
     </div>
   </div>

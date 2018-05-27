@@ -23,7 +23,7 @@ export class QuestionService {
     return this.http.post(url, data, header).toPromise();
   }
   updatenextquestion(data: any) {
-    console.log(data);
+    //console.log(data);
     let url = Connect.getHostUrl() + '/updatenextquestion.php'
     let header = { headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' }) };
     return this.http.post(url, data, header).toPromise();
