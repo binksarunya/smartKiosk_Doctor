@@ -13,8 +13,10 @@ export class LinkquestionComponent implements OnInit {
   public link:boolean;
   public questionlink:any;
   public answerser:any;
+  public questionall:any;
   constructor(private rout: Router, private quest: QuestionService) {
     this.link = false;
+    this.getquestionall();
    }
 
   ngOnInit() {
@@ -23,6 +25,12 @@ export class LinkquestionComponent implements OnInit {
 
   back() {
     this.rout.navigate(['/main/questionmanage']);
+  }
+  getquestionall(){
+    this.quest.get().subscribe(Response=>{
+      this.questionall = this.quest.question;
+      console.log(this.questionall);
+    });
   }
 
   linkquestion(quest:any){
@@ -37,7 +45,7 @@ export class LinkquestionComponent implements OnInit {
     this.quest.getanswerid(questid).subscribe((Response)=>{
       if(Response==true){
         this.answerser = this.quest.answerbyid;
-        console.log(this.answerser);
+        //console.log(this.answerser);
       }
     });
   }

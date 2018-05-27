@@ -33,6 +33,7 @@ export class QuestionComponent implements OnInit {
   public ansidset:Array<string>;
   public checkfirst:boolean;
 
+  public searchquestion:string;
 
   public quest: Question;
 

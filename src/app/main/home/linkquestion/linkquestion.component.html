@@ -9,7 +9,7 @@
   <div class="panel panel-info">
     <div class="panel-heading">Link Question
       <i class="material-icons">
-          settings_ethernet
+        settings_ethernet
       </i>
       <form class="searchSetting">
         <mat-form-field class="search-input">
@@ -81,8 +81,17 @@
                 <td>{{ans.symptomid}}</td>
                 <td>
                   <mat-form-field class="example-full-id">
-                    <input matInput placeholder="next question" [(ngModel)]="ans.nextquestionID" name="ans.nextquestionID" (keyup)="updatenextquestion(ans)">
+                    <input type="text" placeholder="answer ID" aria-label="Number" matInput [(ngModel)]="ans.nextquestionID" [matAutocomplete]="auto2"
+                      name="ans.nextquestionID">
+                    <mat-autocomplete #auto2="matAutocomplete">
+                      <mat-option *ngFor="let option of questionall |filter:ans.nextquestionID" [value]="option.ID">
+                        {{ option.ID }}
+                      </mat-option>
+                    </mat-autocomplete>
                   </mat-form-field>
+                  <!-- <mat-form-field class="example-full-id">
+                    <input matInput placeholder="next question" [(ngModel)]="ans.nextquestionID" name="ans.nextquestionID" (keyup)="updatenextquestion(ans)">
+                  </mat-form-field> -->
                 </td>
               </tr>
             </tbody>
@@ -97,4 +106,32 @@
 
 
 
+
+</div>
+<div class="้boxHide" *ngIf="link">
+  <mat-form-field class="search-input">
+    <input matInput placeholder="Search by question ID" [(ngModel)]="searchquestion" name="searchquestion">
+  </mat-form-field>
+  <div class="container">
+    <mat-card>
+      <table class="table">
+        <thead>
+          <tr class="headTitle">
+            <th scope="col">Question ID</th>
+            <th scope="col">Question</th>
+            <th scope="col">Body part</th>
+            <th scope="col">Fist question</th>
+          </tr>
+        </thead>
+        <tbody class="textinbox">
+          <tr *ngFor="let quest of questionall |filter:searchquestion">
+            <td>{{quest.ID}}</td>
+            <td>{{quest.question}}</td>
+            <td>{{quest.body}}</td>
+            <td>{{quest.isfirst}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </mat-card>
+  </div>
 </div>
