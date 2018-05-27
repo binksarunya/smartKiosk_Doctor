@@ -13,6 +13,7 @@
         event
       </i>
     </div>
+
     <div class="panel-body">
 
       <div class="example-container">
@@ -43,44 +44,62 @@
         </div>
 
         <div *ngIf="checkdiag">
-          <div class="loginBox">
-            <div id="formContent">
-              <h1>Patient Detail</h1>
-              <hr>
-              <br>
-              <table style="width:60%">
-                <tr>
-                  <th></th>
-                  <th></th>
-                </tr>
+          <div class="row">
+            <h2>Patient Detail</h2>
+            <hr>
+            <div class="col-md-6">
+              <div class="container">
+                <table style="width:50%">
+                  <tr>
+                    FirstName
+                  </tr>
+                  <br>
+                  <tr>
+                    Lastname
+                  </tr>
+                  <br>
+                  <tr>
+                    Gender
+                  </tr>
+                  <br>
+                  <tr>
+                    Blood
+                  </tr>
+                  <br>
+                  <tr>
+                    History
+                  </tr>
 
-                <tr>
-                  FirstName : {{user.name}}
-                </tr>
+                </table>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="container2">
+                <table style="width:50%">
+                  <tr>
+                    {{user.name}}
+                  </tr>
+                  <br>
+                  <tr>
+                    {{user.lastname}}
+                  </tr>
+                  <br>
+                  <tr>
+                    {{user.gender}}
+                  </tr>
+                  <br>
+                  <tr>
+                    {{user.blood}}
+                  </tr>
+                  <br>
+                  <tr>
+                    <mat-form-field>
+                      <textarea class="setTextarea" matInput placeholder="History" [(ngModel)]="user.history" name="user.history"></textarea>
+                    </mat-form-field>
+                  </tr>
 
-                <tr>
-                  Lastname : {{user.lastname}}
-                </tr>
-
-                <tr>
-                  Gender : {{user.gender}}
-                </tr>
-                <tr>
-                  Blood : {{user.blood}}
-                </tr>
-                <tr>
-                  History :
-                  <mat-form-field>
-                    <textarea class="setTextarea" matInput placeholder="History" [(ngModel)]="user.history" name="user.history"></textarea>
-                  </mat-form-field>
-                </tr>
-                <button mat-raised-button color="warn" (click)="cancle()">cancle</button>
-                <td>
-                   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
-                </td>
-                <button mat-raised-button color="primary" (click)="ok()">Finish Diagnosis</button>
-
-              </table>
+                </table>
+              </div>
 
             </div>
 
@@ -88,7 +107,7 @@
 
           <div class="loginBox">
             <div id="formContent">
-              <h1>Diagnosis</h1>
+              <h2>Diagnosis</h2>
               <hr>
               <br>
               <table style="width:60%">
@@ -97,7 +116,7 @@
                   <th></th>
                 </tr>
                 <tr *ngFor="let d of diagshow">
-                  - : {{d.disease}} &nbsp;&nbsp;:&nbsp;&nbsp;&nbsp; {{d.percen}} %
+                  - : {{d.disease}} :::::: {{d.percen}} %
 
                 </tr>
               </table>
@@ -105,7 +124,7 @@
           </div>
           <div class="loginBox">
             <div id="formContent">
-              <h1>Patient Answer</h1>
+              <h2>Patient Answer</h2>
               <hr>
               <br>
               <table style="width:60%">
@@ -114,131 +133,20 @@
                   <th></th>
                 </tr>
                 <tr>
-                  Processing
+                  wait i am working!
                 </tr>
               </table>
             </div>
           </div>
+          <tr>
+            <button class="setBtnBottom" mat-raised-button color="warn" (click)="cancle()">cancle</button>
+            
+            <button mat-raised-button color="primary" (click)="ok()">Finish Diagnosis</button>
+          </tr>
         </div>
       </div>
-
     </div>
   </div>
 </div>
 
-<!--
-<div class="Btn">
-  <h1>Admission Queue</h1>
-  <hr>
-  <mat-card class="cardBox">
-    <div class="example-container">
-      <div *ngIf="checkqueue">
-        
-        <table class="table">
-          <thead>
-            <tr class="headTitle">
-              <th scope="col">Date queue</th>
-              <th scope="col">ID Card</th>
-              <th scope="col">Status</th>
-              <th scope="col">Diagnosis</th>
-              
-            </tr>
-          </thead>
-          <tbody class="textinbox">
-            <tr *ngFor="let q of queue">
-              <td>{{q.que}}</td>
-              <td>{{q.patientID}}</td>
-              <td (mouseover)="checkstr()">{{q.status}}</td>
-              <td>
-                <button mat-button (click)="diagnosis(q.patientID)" >
-                  <i class="fa fa-edit w3-xlarge"></i>
-                </button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
 
-      </div>
-
-      <div *ngIf="checkdiag">
-        <div class="loginBox">
-          <div id="formContent">
-            <h1>Patient Detail</h1>
-            <hr>
-            <br>
-            <table style="width:60%">
-              <tr>
-                <th></th>
-                <th></th>
-              </tr>
-
-              <tr>
-                FirstName : {{user.name}}
-              </tr>
-
-              <tr>
-                Lastname : {{user.lastname}}
-              </tr>
-
-              <tr>
-                Gender : {{user.gender}}
-              </tr>
-              <tr>
-                Blood : {{user.blood}}
-              </tr>
-              <tr>
-                History :
-                <mat-form-field>
-                  <textarea matInput placeholder="History" [(ngModel)]="user.history" name="user.history"></textarea>
-                </mat-form-field>
-              </tr>
-              <button mat-raised-button color="warn" (click)="cancle()">cancle</button>
-              <button mat-raised-button color="primary" (click)="ok()">Finish Diagnosis</button>
-
-            </table>
-
-          </div>
-
-        </div>
-
-        <div class="loginBox">
-          <div id="formContent">
-            <h1>Diagnosis</h1>
-            <hr>
-            <br>
-            <table style="width:60%">
-              <tr>
-                <th></th>
-                <th></th>
-              </tr>
-              <tr *ngFor="let d of diagshow">
-                - : {{d.disease}} :::::: {{d.percen}} %
-
-              </tr>
-            </table>
-          </div>
-        </div>
-        <div class="loginBox">
-          <div id="formContent">
-            <h1>Patient Answer</h1>
-            <hr>
-            <br>
-            <table style="width:60%">
-              <tr>
-                <th></th>
-                <th></th>
-              </tr>
-              <tr>
-                wait i am working!
-              </tr>
-            </table>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </mat-card>
-
-</div>
-
--->

@@ -8,7 +8,7 @@
   }
   
   .example-full-id {
-    width: 30%;
+    width: 50%;
 }
 .example-full-id2 {
   width: 20%;
@@ -59,9 +59,9 @@
   }
   
   /* css table*/
-  .example-container {
+  /*.example-container {
     min-width: 200px;
-  }
+  }*/
   
   .mat-table {
     overflow: auto;
@@ -222,7 +222,7 @@ button.delete {
   display: flex;
   flex-direction: column;
   max-height: 420px;
-  min-width: 300px;
+  min-width: 200px;
   overflow: auto;
 }
 .textinbox {
@@ -239,3 +239,16 @@ button.delete {
   font-size: 16px;
 }
 
+.search-input {
+  position: relative;
+  padding: 1rem 0 0.5rem 0;
+  height: 4.5rem;
+  width: 21.5rem;
+  font-family: 'Prompt';
+  font-size: 16px;
+}
+
+.container {
+  padding-left: 0;
+  padding-right: 0;
+}

@@ -285,9 +285,26 @@ button.delete {
   .container {
     font-family: 'Prompt';
   }
+  .container2 {
+    text-align: left;
+  }
   .setTextarea {
     width: 100%;
     max-width: 400px;
   }
+  .setFontColor {
+    color: #145252;
+  }
+
+  .p {
+    font-size: 16px;
+  }
+  .body {
+    line-height: 0.8;
+  }
+  .setBtnBottom {
+    margin-right: 100px;
+  }
+  
 
   
