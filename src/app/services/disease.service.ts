@@ -39,6 +39,13 @@ export class DiseaseService {
   //   let header = { headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' }) };
   //   return this.http.post(url, data, header).toPromise();
   // }
+  getdiseasebyid(data: string) {
+    //console.log(data);
+    let url = Connect.getHostUrl() + '/getdiseasebyid.php'
+    let header = { headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' }) };
+    return this.http.post(url, data, header).toPromise();
+  }
+
 
   adddisease(data: any) {
     //console.log(data);

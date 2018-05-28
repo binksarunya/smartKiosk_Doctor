@@ -45,6 +45,7 @@ import { DiseaseService } from './services/disease.service';
 import { QuestionService } from './services/question.service';
 import { DiagService } from './services/diag.service';
 import { GetpatientService } from './services/getpatient.service';
+import {MatChipsModule} from '@angular/material/chips';
 
 import { HomeComponent } from './main/home/home.component';
 import { MainComponent } from './main/main.component';
@@ -112,7 +113,8 @@ import { RegisterComponent } from './register/register.component';
     MatAutocompleteModule,
     MatDividerModule,
     MatListModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatChipsModule,
   ],
   providers: [
     LoginService,

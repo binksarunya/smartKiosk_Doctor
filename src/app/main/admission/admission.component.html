@@ -116,10 +116,14 @@
                   <th></th>
                 </tr>
                 <tr *ngFor="let d of diagshow">
-                  - : {{d.disease}} :::::: {{d.percen}} %
+                  - : <p><mat-chip (mouseenter)="enter(d.disease)" (mouseleave)="outer()">{{d.disease}}</mat-chip></p> :::::: {{d.percen}} %
 
                   <mat-progress-bar mode="determinate" value="{{d.percen}}"></mat-progress-bar>
 
+                </tr>
+                <tr *ngIf="check">
+                  <p>Disease detail : </p><br>
+                  <p>{{str.detail}}</p>
                 </tr>
               </table>
             </div>

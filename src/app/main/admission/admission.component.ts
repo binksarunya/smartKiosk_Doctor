@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DiagService } from '../../services/diag.service';
 import { GetpatientService } from '../../services/getpatient.service';
+import { DiseaseService } from '../../services/disease.service';
 
 @Component({
   selector: 'app-admission',
@@ -16,12 +17,29 @@ export class AdmissionComponent implements OnInit {
   private user: any;
   private diagshow: Array<any>;
   private id: string;
+  public str:any;
+  public check:boolean;
 
-  constructor(private rout: Router, private diag: DiagService, private getpatient: GetpatientService) {
+  constructor(private rout: Router, private diag: DiagService, private getpatient: GetpatientService,private disease:DiseaseService) {
     this.getqueue();
     this.checkqueue = true;
     this.checkdiag = false;
     this.diagshow = new Array();
+    this.check = false;
+  }
+
+  enter(data:string){
+    //console.log(data);
+    this.check = true;
+    this.disease.getdiseasebyid(data).then(Response=>{
+      
+      let data = Response.json();
+      this.str = data.data[0];
+      console.log(this.str);
+    });
+  }
+  outer(){
+    this.check = false;
   }
 
   ngOnInit() {
