@@ -42,6 +42,7 @@ export class EditdiseaseComponent implements OnInit {
   edit(data: any) {
     // console.log(data);
     this.editdata = data;
+    this.checkedit = true;
     this.disease.getsymptom(data.ID).subscribe(Response => {
       if (Response == true) {
         this.editsymptom = this.disease.symptom;
