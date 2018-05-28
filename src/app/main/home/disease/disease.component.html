@@ -16,7 +16,7 @@
       <form class="example-form">
         <td>
           <mat-form-field class="textarea-full-width">
-            <input matInput placeholder="Disease ID" [(ngModel)]="disease.name" name="disease.name">
+            <input matInput placeholder="Disease ID" [(ngModel)]="disease.id" name="disease.id">
           </mat-form-field>
           <br>
         </td>
@@ -25,12 +25,12 @@
       <br>
       <form class="example-form">
         <mat-form-field class="textarea-full-width">
-          <input matInput placeholder="Disease name" [(ngModel)]="disease.detail" name="disease.detail">
+          <input matInput placeholder="Disease name" [(ngModel)]="disease.name" name="disease.name">
         </mat-form-field>
       </form>
       <br>
       <mat-form-field class="textarea-full-width">
-        <textarea matInput placeholder="Disease description"></textarea>
+        <textarea matInput placeholder="Disease description" [(ngModel)]="disease.detail" name="disease.detail"></textarea>
       </mat-form-field>
 
       <br>

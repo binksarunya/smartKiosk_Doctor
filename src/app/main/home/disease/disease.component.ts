@@ -23,6 +23,7 @@ export class DiseaseComponent implements OnInit {
   constructor(private rout: Router, private symptom: AddsymptomService, private diseaseservice: DiseaseService) {
     this.disease = new Disease();
     this.disease.name = null;
+    this.disease.id = null;
     this.selectsymptom = [];
     this.show = false;
   }
@@ -83,7 +84,7 @@ export class DiseaseComponent implements OnInit {
     }
   }
   adddisease() {
-    if (this.disease.name != null) {
+    if (this.disease.name != null && this.disease.id != null) {
       this.disease.symptomlist = this.selectsymptom;
       this.diseaseservice.adddisease(this.disease).then(
         (response) => {
@@ -92,6 +93,7 @@ export class DiseaseComponent implements OnInit {
             this.disease = new Disease();
             this.selectsymptom = [];
             this.disease.name = null;
+            this.disease.id = null;
             this.str = "add success!";
             this.color = "green";
           } else {
