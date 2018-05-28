@@ -9,13 +9,13 @@
   <div class="panel panel-info">
     <div class="panel-heading">Add Disease
       <i class="material-icons">
-        list_alt
+        add
       </i>
     </div>
     <div class="panel-body">
       <form class="example-form">
         <td>
-          <mat-form-field class="disease-input">
+          <mat-form-field class="textarea-full-width">
             <input matInput placeholder="Disease ID" [(ngModel)]="disease.name" name="disease.name">
           </mat-form-field>
           <br>
@@ -24,10 +24,14 @@
 
       <br>
       <form class="example-form">
-        <mat-form-field class="search-input">
+        <mat-form-field class="textarea-full-width">
           <input matInput placeholder="Disease name" [(ngModel)]="disease.detail" name="disease.detail">
         </mat-form-field>
       </form>
+      <br>
+      <mat-form-field class="textarea-full-width">
+        <textarea matInput placeholder="Disease description"></textarea>
+      </mat-form-field>
 
       <br>
       <h5 class="orChoose">Please search the symptoms that are relevant.</h5>
