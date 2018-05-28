@@ -11,6 +11,7 @@ import { MatFormFieldModule } from '@angular/material';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule, MatNativeDateModule } from '@angular/material';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 
 import { MatInputModule } from '@angular/material/input';
@@ -110,7 +111,8 @@ import { RegisterComponent } from './register/register.component';
     Ng2SearchPipeModule,
     MatAutocompleteModule,
     MatDividerModule,
-    MatListModule
+    MatListModule,
+    MatProgressBarModule
   ],
   providers: [
     LoginService,

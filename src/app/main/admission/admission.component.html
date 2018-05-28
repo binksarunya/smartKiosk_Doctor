@@ -118,6 +118,8 @@
                 <tr *ngFor="let d of diagshow">
                   - : {{d.disease}} :::::: {{d.percen}} %
 
+                  <mat-progress-bar mode="determinate" value="{{d.percen}}"></mat-progress-bar>
+
                 </tr>
               </table>
             </div>
