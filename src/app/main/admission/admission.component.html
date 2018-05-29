@@ -115,8 +115,8 @@
                   <th></th>
                   <th></th>
                 </tr>
-                <tr *ngFor="let d of diagshow">
-                  - : <p><mat-chip (mouseenter)="enter(d.disease)" (mouseleave)="outer()">{{d.disease}}</mat-chip></p> :::::: {{d.percen}} %
+                <tr *ngFor="let d of dshow">
+                  - : <p><mat-chip (mouseenter)="enter(d.id)" (mouseleave)="outer()">{{d.name}}</mat-chip></p> :::::: {{d.percen}} %
 
                   <mat-progress-bar mode="determinate" value="{{d.percen}}"></mat-progress-bar>
 

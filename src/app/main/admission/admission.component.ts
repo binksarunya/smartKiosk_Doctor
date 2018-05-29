@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { DiagService } from '../../services/diag.service';
 import { GetpatientService } from '../../services/getpatient.service';
 import { DiseaseService } from '../../services/disease.service';
+import { Diseaseshow } from '../../models/diseaseshow';
 
 @Component({
   selector: 'app-admission',
@@ -19,6 +20,9 @@ export class AdmissionComponent implements OnInit {
   private id: string;
   public str:any;
   public check:boolean;
+  //------------------------------------------------------------------
+  public diseasename:Array<any>;
+  public dshow :Array<Diseaseshow>;
 
   constructor(private rout: Router, private diag: DiagService, private getpatient: GetpatientService,private disease:DiseaseService) {
     this.getqueue();
@@ -26,6 +30,8 @@ export class AdmissionComponent implements OnInit {
     this.checkdiag = false;
     this.diagshow = new Array();
     this.check = false;
+    this.diseasename = new Array();
+    this.dshow = new Array();
   }
 
   enter(data:string){
@@ -96,18 +102,27 @@ export class AdmissionComponent implements OnInit {
     this.getpatient.dequeue(id).then(
       (response) => {
         this.getqueue();
-        const data = response.json();
+        let data = response.json();
         //console.log(data);
       });
   }
   setdiagshow() {
     for (let i = 0; i < this.diag.diagdisease.length; i++) {
+      let result = new Diseaseshow();
       if (this.diag.diagdisease[i].percen >= 20) {
         this.diagshow.push(this.diag.diagdisease[i]);
+        result.id = this.diag.diagdisease[i].disease;
+        result.percen = this.diag.diagdisease[i].percen;
+        this.disease.getdiseasebyid(this.diag.diagdisease[i].disease).then(Response=>{
+          let name = Response.json();
+          this.diseasename.push(name);
+          result.name = name.data[0].name;
+        });
       }
+      this.dshow.push(result);
     }
 
-    //console.log(this.diagshow);
+    //console.log(this.dshow);
   }
 
 
@@ -156,6 +171,7 @@ export class AdmissionComponent implements OnInit {
   clear() {
     this.diag.clear();
     this.diagshow = new Array();
+    this.diseasename = new Array();
   }
 
 }
