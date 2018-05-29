@@ -13,14 +13,27 @@ export class DiagService {
   constructor(private http: Http) { }
 
   updatestr(data: any) {
-    console.log(data);
+    // console.log(data);
     let url = Connect.getHostUrl() + '/updatestr.php'
     let header = { headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' }) };
     return this.http.post(url, data, header).toPromise();
   }
   updatestr2(data: any) {
-    console.log(data);
+    // console.log(data);
     let url = Connect.getHostUrl() + '/updatestr2.php'
+    let header = { headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' }) };
+    return this.http.post(url, data, header).toPromise();
+  }
+
+  getquestionfordiag(data: any) {
+    // console.log(data);
+    let url = Connect.getHostUrl() + '/getquestionfordiag.php'
+    let header = { headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' }) };
+    return this.http.post(url, data, header).toPromise();
+  }
+  getanswerfordiag(data: any) {
+    // console.log(data);
+    let url = Connect.getHostUrl() + '/getansfordiag.php'
     let header = { headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' }) };
     return this.http.post(url, data, header).toPromise();
   }

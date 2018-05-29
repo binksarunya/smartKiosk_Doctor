@@ -23,7 +23,7 @@
               <tr class="headTitle">
                 <th scope="col">Date queue</th>
                 <th scope="col">ID Card</th>
-                <th scope="col">Status</th>
+                <th scope="col" (mouseenter)="checkstr()">Status</th>
                 <th scope="col">Diagnosis</th>
               </tr>
             </thead>
@@ -116,13 +116,17 @@
                   <th></th>
                 </tr>
                 <tr *ngFor="let d of dshow">
-                  - : <p><mat-chip (mouseenter)="enter(d.id)" (mouseleave)="outer()">{{d.name}}</mat-chip></p> :::::: {{d.percen}} %
+                  - :
+                  <p>
+                    <mat-chip (mouseenter)="enter(d.id)" (mouseleave)="outer()">{{d.name}}</mat-chip>
+                  </p> :::::: {{d.percen}} %
 
                   <mat-progress-bar mode="determinate" value="{{d.percen}}"></mat-progress-bar>
 
                 </tr>
                 <tr *ngIf="check">
-                  <p>Disease detail : </p><br>
+                  <p>Disease detail : </p>
+                  <br>
                   <p>{{str.detail}}</p>
                 </tr>
               </table>
@@ -139,14 +143,40 @@
                   <th></th>
                 </tr>
                 <tr>
-                  wait i am working!
+                  <mat-card>
+                    <h1>Question set</h1>
+                    <li *ngFor="let q of question">
+                      <!-- <div *ngIf="q" (onCreate)="yourMethod(item)"> 
+                            </div> -->
+                      questionID : {{q.questionID}}
+                      <p>question : {{q.questionDetail}}</p>
+                      <!-- <div let a of answer>
+                        <p>answer : </p>
+                        </div> -->
+
+                    </li>
+                  </mat-card>
+                  <mat-card>
+                    <h1>Answer set</h1>
+                    <li *ngFor="let a of answer">
+                      <!-- <div *ngIf="q" (onCreate)="yourMethod(item)"> 
+                              </div> -->
+                      answerID : {{a.answerID}}
+                      <p>Answer : {{a.answer}}</p>
+                      <p>symptom : {{a.symptom}}</p>
+                      <!-- <div let a of answer>
+                          <p>answer : </p>
+                          </div> -->
+
+                    </li>
+                  </mat-card>
                 </tr>
               </table>
             </div>
           </div>
           <tr>
             <button class="setBtnBottom" mat-raised-button color="warn" (click)="cancle()">cancle</button>
-            
+
             <button mat-raised-button color="primary" (click)="ok()">Finish Diagnosis</button>
           </tr>
         </div>
@@ -154,5 +184,3 @@
     </div>
   </div>
 </div>
-
-

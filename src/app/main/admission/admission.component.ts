@@ -4,6 +4,7 @@ import { DiagService } from '../../services/diag.service';
 import { GetpatientService } from '../../services/getpatient.service';
 import { DiseaseService } from '../../services/disease.service';
 import { Diseaseshow } from '../../models/diseaseshow';
+import { Questionshow } from '../../models/questionshow';
 
 @Component({
   selector: 'app-admission',
@@ -33,7 +34,46 @@ export class AdmissionComponent implements OnInit {
     this.diseasename = new Array();
     this.dshow = new Array();
   }
+//--------------------------------------------------- question for diag
+  // public idpatient:string;
+  public question : Array<any>;
+    getquestionfordiaf(){
+      this.diag.getquestionfordiag(this.id).then(Response=>{
+        let result = Response.json();
+        this.question = result.data;
+        this.getanswerfordiag();
+        console.log(this.question);
+      });
+    }
+//------------------------------------------------------answer for diag
+  public answer : Array<any>;
+    getanswerfordiag(){
+      this.diag.getanswerfordiag(this.id).then(Response=>{
+        let result = Response.json();
+        this.answer = result.data;
+        console.log(this.answer);
+        this.setdiag();
+      });
 
+    }
+//-----------------------------------------------------group up
+    public set:Array<Questionshow> = new Array();
+    setdiag(){
+      for(let i=0;i<this.question.length;i++){
+        for(let j=0;j<this.answer.length;j++){
+          if(this.answer[j].questionid==this.question[i].questionID){
+            let res = new Questionshow();
+            res.answer=this.answer[j];
+            res.question=this.question[i];
+            this.set.push(res);
+          }
+        }
+
+      }
+      console.log(this.set);
+    }
+
+//--------------------------------------------------
   enter(data:string){
     //console.log(data);
     this.check = true;
@@ -41,7 +81,7 @@ export class AdmissionComponent implements OnInit {
       
       let data = Response.json();
       this.str = data.data[0];
-      console.log(this.str);
+      //console.log(this.str);
     });
   }
   outer(){
@@ -59,6 +99,7 @@ export class AdmissionComponent implements OnInit {
     this.getdiag(q);
     this.getpatientqueue(q);
     this.setstr(q);
+    this.getquestionfordiaf();
 
   }
   setstr(id: string) {
@@ -128,6 +169,7 @@ export class AdmissionComponent implements OnInit {
 
 
   back() {
+    this.setstr2(this.id);
     this.rout.navigate(['/main/home']);
   }
 
@@ -139,7 +181,7 @@ export class AdmissionComponent implements OnInit {
         } else {
           this.queue = this.diag.queue;
         }
-        console.log(this.queue);
+        // console.log(this.queue);
       });
   }
 
@@ -172,6 +214,7 @@ export class AdmissionComponent implements OnInit {
     this.diag.clear();
     this.diagshow = new Array();
     this.diseasename = new Array();
+    this.dshow = new Array();
   }
 
 }
