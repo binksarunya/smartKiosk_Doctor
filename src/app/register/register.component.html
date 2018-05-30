@@ -1,13 +1,14 @@
 <div class="" style="background-color:rgba(245, 241, 241, 0.493);">
 
   <img class="img">
-  <h2>Register</h2>
+
   <div class="loginBox">
     <div class="formContent">
+      <h2>Register</h2>
       <form class="example-form">
         <tr>
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="ID" value="" [(ngModel)]="user.id" name="user.id">
+            <input matInput placeholder="IDENTITY CARD" value="" [(ngModel)]="user.id" name="user.id">
           </mat-form-field>
         </tr>
 
@@ -23,30 +24,33 @@
         </tr>
         <tr>
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Name" value="" [(ngModel)]="user.name" name="user.name">
+            <input matInput placeholder="FIRSTNAME" value="" [(ngModel)]="user.name" name="user.name">
           </mat-form-field>
         </tr>
         <tr>
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Last Name" value="" [(ngModel)]="user.lname" name="user.lname">
+            <input matInput placeholder="LASTNAME" value="" [(ngModel)]="user.lname" name="user.lname">
           </mat-form-field>
         </tr>
         <tr>
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Phone Number" value="" [(ngModel)]="user.phone" name="user.phone">
+            <input matInput placeholder="TEL." value="" [(ngModel)]="user.phone" name=user.phone>
           </mat-form-field>
         </tr>
         <tr>
-        <font color="{{color}}">{{str}}</font>
+          <font color="{{color}}">{{str}}</font>
         </tr>
-        <button mat-raised-button color="warn" (click)="cancle()">Cancle</button>
-        <td>
+        <div class="buttonDown">
+          <br>
+          <button mat-raised-button color="warn" (click)="cancle()">Cancle</button>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <button mat-raised-button color="primary" (click)="register()">Register</button>
+        </div>
 
-        </td>
-        <button mat-raised-button color="primary" (click)="register()">Register</button>
-        <br>
       </form>
     </div>
   </div>
 
 </div>
+
+

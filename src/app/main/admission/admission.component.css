@@ -102,7 +102,10 @@
 }
   
 .example-full-width {
-    width: 100%;
+  width: 400px;
+  font-family: 'Prompt';
+  font-size: 16px;
+  margin: 10px 10px;
 }
   
 .editHead {
@@ -228,22 +231,23 @@ button.delete {
   font-size: 18px;
 }
 
-.table, tr {
+.tr {
   font-family: 'Prompt';
   font-size: 16px;
   width: 100%;
   text-align: left;
 }
 
-.headTitle {
+.table {
   font-family: 'Prompt';
-  text-align: -moz-center;
   font-size: 16px;
+  font-style: normal;
 }
 
 .textinbox {
-  text-align: center;
+  text-align: left;
 }
+
 
   /* STRUCTURE */
  

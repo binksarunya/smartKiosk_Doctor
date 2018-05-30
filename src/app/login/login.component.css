@@ -31,10 +31,16 @@ img {
     margin-left: auto;
     margin-right: auto;
     margin-top: 70px;
-    width: 50%;
+    width: 100px;
     max-width: 20%;
     padding-top: 2%;
     padding-bottom: 0%;
+}
+h1 {
+  color: black;
+  font-size: 60px;
+  font-family: 'Prompt';
+  text-align: center;
 }
 
 h2 {
@@ -94,11 +100,11 @@ h2 {
     border: none;
     outline: none;
     height: 40px;
-    width: 60%;
-    font-size: 18px;
-    background: #ff3f40;
+    width: 70%;
+    font-size: 24px;
+    background: #06899b;
     color: #fff;
-    border-radius: 20px;
+    border-radius: 10px;
     cursor: pointer;
     font-family: 'Prompt';
     
