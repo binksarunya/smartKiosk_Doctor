@@ -36,6 +36,7 @@ export class AdmissionComponent implements OnInit {
     this.diseasename = new Array();
     this.dshow = new Array();
     this.diag.docID = this.doc.aUser.name;
+    this.set = new Array();
   }
 //--------------------------------------------------- question for diag
   // public idpatient:string;
@@ -60,7 +61,7 @@ export class AdmissionComponent implements OnInit {
 
     }
 //-----------------------------------------------------group up
-    public set:Array<Questionshow> = new Array();
+    public set:Array<Questionshow>;
     setdiag(){
       for(let i=0;i<this.question.length;i++){
         for(let j=0;j<this.answer.length;j++){
@@ -154,7 +155,7 @@ export class AdmissionComponent implements OnInit {
   setdiagshow() {
     for (let i = 0; i < this.diag.diagdisease.length; i++) {
       let result = new Diseaseshow();
-      if (this.diag.diagdisease[i].percen > 50) {
+      if (this.diag.diagdisease[i].percen > 20) {
         this.diagshow.push(this.diag.diagdisease[i]);
         result.id = this.diag.diagdisease[i].disease;
         result.percen = this.diag.diagdisease[i].percen;

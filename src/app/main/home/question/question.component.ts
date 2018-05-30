@@ -194,6 +194,7 @@ export class QuestionComponent implements OnInit {
     this.checkfirst =false;
   }
   setnullans() {
+    this.ans = new Answer();
     this.ans.ans = null;
     this.ans.ansid = null;
     this.ans.symptom = null;

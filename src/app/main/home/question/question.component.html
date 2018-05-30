@@ -92,7 +92,7 @@
                 </tr>
               </thead>
               <tbody class="textinbox">
-                <tr *ngFor="let answer of ansidset |filter:search">
+                <tr *ngFor="let answer of ansidset">
                   <td>{{answer}}</td>
                   <td>
                     <button mat-button (click)="deleteanswerinquestion(answer)">
