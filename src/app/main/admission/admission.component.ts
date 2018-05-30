@@ -6,6 +6,7 @@ import { DiseaseService } from '../../services/disease.service';
 import { Diseaseshow } from '../../models/diseaseshow';
 import { Questionshow } from '../../models/questionshow';
 import { DateAdapter } from '@angular/material';
+import { LoginService } from '../../services/login.service'
 
 @Component({
   selector: 'app-admission',
@@ -26,7 +27,7 @@ export class AdmissionComponent implements OnInit {
   public diseasename:Array<any>;
   public dshow :Array<Diseaseshow>;
 
-  constructor(private rout: Router, private diag: DiagService, private getpatient: GetpatientService,private disease:DiseaseService) {
+  constructor(private doc:LoginService,private rout: Router, private diag: DiagService, private getpatient: GetpatientService,private disease:DiseaseService) {
     this.getqueue();
     this.checkqueue = true;
     this.checkdiag = false;
@@ -34,6 +35,7 @@ export class AdmissionComponent implements OnInit {
     this.check = false;
     this.diseasename = new Array();
     this.dshow = new Array();
+    this.diag.docID = this.doc.aUser.name;
   }
 //--------------------------------------------------- question for diag
   // public idpatient:string;
@@ -177,6 +179,7 @@ export class AdmissionComponent implements OnInit {
   }
 
   getqueue() {
+    this.diag.docID = this.doc.aUser.name;
     this.diag.getqueue().subscribe(
       response => {
         if (response == true) {

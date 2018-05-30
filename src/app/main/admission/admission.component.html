@@ -144,32 +144,35 @@
                 </tr>
                 <tr>
                   <mat-card>
-                    <h1>Question set</h1>
-                    <li *ngFor="let q of question">
+                    <!-- <h1>Question And Answer</h1> -->
+                    <table class="table">
+                        <thead>
+                          <tr class="headTitle">
+                            <th scope="col">Question</th>
+                            <th scope="col">Answer</th>
+                          </tr>
+                        </thead>
+                        <tbody class="textinbox">
+                          <tr *ngFor="let s of set">
+                            <td>{{s.question.questionDetail}}</td>
+                            <td>{{s.answer.answer}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+
+                    <!-- <li *ngFor="let q of question"> -->
                       <!-- <div *ngIf="q" (onCreate)="yourMethod(item)"> 
                             </div> -->
                       <!-- questionID : {{q.questionID}} -->
-                      question : {{q.questionDetail}}
+                      <!-- question : {{q.questionDetail}} -->
                       <!-- <div let a of answer>
                         <p>answer : </p>
                         </div> -->
 
-                    </li>
+                    <!-- </li> -->
                   </mat-card>
-                  <mat-card>
-                    <h1>Answer set</h1>
-                    <li *ngFor="let a of answer">
-                      <!-- <div *ngIf="q" (onCreate)="yourMethod(item)"> 
-                              </div> -->
-                      <!-- answerID : {{a.answerID}} -->
-                      Answer : {{a.answer}}
-                      <!-- <p>symptom : {{a.symptom}}</p> -->
-                      <!-- <div let a of answer>
-                          <p>answer : </p>
-                          </div> -->
-
-                    </li>
-                  </mat-card>
+                  
                 </tr>
               </table>
             </div>

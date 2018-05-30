@@ -10,6 +10,7 @@ import { Connect } from '../models/connect';
 export class DiagService {
   public queue: Array<string>;
   public diagdisease: Array<any>;
+  public docID:string;
   constructor(private http: Http) { }
 
   updatestr(data: any) {
@@ -39,10 +40,10 @@ export class DiagService {
   }
 
   getqueue(): Observable<boolean> {
-
+  
     let url = Connect.getHostUrl() + '/getqueue.php';
     let header = { headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' }) };
-    return this.http.get(url, header).map((res: Response) => { return this.conget(res) }).catch((error: any) => {
+    return this.http.post(url,this.docID,header).map((res: Response) => { return this.conget(res) }).catch((error: any) => {
       console.log("");
       return Observable.of(false);
     });
