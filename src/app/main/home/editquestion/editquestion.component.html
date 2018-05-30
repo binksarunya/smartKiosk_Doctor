@@ -71,6 +71,30 @@
           <mat-form-field class="example-full-id">
             <input matInput placeholder="question Detail" [(ngModel)]="editquestion.question" name="editquestion.question">
           </mat-form-field>
+          
+          <!-- edit                                               -->
+          <div class="example-full-width">
+            <h3>Add Answer</h3>
+              <!-- <mat-form-field class="example-full-id2">
+                <input matInput placeholder="answer id" [(ngModel)]="ans.ansid" name="ans.ansid">
+              </mat-form-field> -->
+              <mat-form-field class="example-full-id">
+                <input matInput placeholder="answer" [(ngModel)]="inputanswer.ans" name="inputanswer.ans">
+              </mat-form-field>
+      
+              <mat-form-field class="example-full-id">
+                <input type="text" placeholder="symptom" aria-label="Number" matInput [(ngModel)]="inputanswer.symptom" [matAutocomplete]="auto"
+                  name="inputanswer.symptom">
+                <mat-autocomplete #auto="matAutocomplete">
+                  <mat-option *ngFor="let option of symptomlist |filter:inputanswer.symptom" [value]="option.name">
+                    {{ option.name }}
+                  </mat-option>
+                </mat-autocomplete>
+              </mat-form-field>
+
+              <button mat-raised-button color="primary" (click)="addanswer()">ADD</button>
+            </div>
+          <!--            end edit                                         -->
 
           <table class="table">
             <thead>

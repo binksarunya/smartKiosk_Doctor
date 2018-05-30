@@ -36,7 +36,7 @@ import { Rout } from './router/rout.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 
-
+import { AddanswerandsymptomService } from './services/addanswerandsymptom.service';
 import { LoginService } from './services/login.service';
 import { AuthService } from './services/auth.service';
 import { RegisterService } from './services/register.service';
@@ -125,6 +125,7 @@ import { RegisterComponent } from './register/register.component';
     QuestionService,
     DiagService,
     GetpatientService,
+    AddanswerandsymptomService,
 
   ],
   bootstrap: [AppComponent]

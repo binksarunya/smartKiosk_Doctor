@@ -114,7 +114,7 @@ export class QuestionComponent implements OnInit {
 
   addanswer() {
     //console.log(this.ans);
-    if (this.ans.ans != null && this.ans.ansid != null && this.ans.symptom != null) {
+    if (this.ans.ans != null && /*this.ans.ansid != null && */this.ans.symptom != null) {
       // this.answer.push(this.ans);
       this.questservice.addanswer(this.ans).then(
         (response) => {

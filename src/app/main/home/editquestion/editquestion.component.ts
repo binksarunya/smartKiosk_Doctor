@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { QuestionService } from '../../../services/question.service';
+import { Answer } from '../../../models/answer';
+import { AddsymptomService } from '../../../services/addsymptom.service';
+import { AddanswerandsymptomService } from '../../../services/addanswerandsymptom.service';
 
 @Component({
   selector: 'app-editquestion',
@@ -15,22 +18,57 @@ export class EditquestionComponent implements OnInit {
   public editquestion: any;
   public answerser: any;
 
-  constructor(private rout: Router, private quest: QuestionService) {
+  //------new 
+  public inputanswer:Answer;
+  public symptomlist: any;
+
+
+  constructor(private rout: Router, private quest: QuestionService,private symptom: AddsymptomService,private addans:AddanswerandsymptomService) {
     this.link = false;
+    this.inputanswer = new Answer();
   }
 
   ngOnInit() {
     this.getquest();
+    this.getsymptom();
 
   }
   back() {
     this.rout.navigate(['/main/questionmanage']);
   }
+  //----------------add ans -------------
 
+  addanswer(){
+    // console.log(this.inputanswer);
+    this.addans.addanswer(this.inputanswer).then(Response=>{
+      let res = Response.json();
+      this.getanswerforlink(this.inputanswer.questionid);
+      // console.log(res);
+    });
+  }
+
+
+  //----------------------------
+  
+  getsymptom(){
+    this.symptom.get().subscribe(
+      response => {
+
+        if (response == true) {
+          this.symptomlist = this.symptom.symp;
+          //this.settable();
+          //console.log(this.symptomlist);
+
+        } else {
+
+        }
+      });
+  }
 
   getanswerforlink(questid: string) {
     // console.log(questid);
     this.answerser = null;
+    this.inputanswer.questionid=questid;
     this.quest.getanswerid(questid).subscribe((Response) => {
       if (Response == true) {
         this.answerser = this.quest.answerbyid; //edit ans
@@ -62,6 +100,7 @@ export class EditquestionComponent implements OnInit {
   }
   deleteans(data: any){
     data.questionID = this.editquestion.ID;
+    console.log(data);
     this.quest.deleteans(data).then(Response => {
       this.getquest();
       this.getanswerforlink(this.editquestion.ID);
