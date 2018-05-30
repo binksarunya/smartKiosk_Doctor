@@ -5,6 +5,7 @@ import { GetpatientService } from '../../services/getpatient.service';
 import { DiseaseService } from '../../services/disease.service';
 import { Diseaseshow } from '../../models/diseaseshow';
 import { Questionshow } from '../../models/questionshow';
+import { DateAdapter } from '@angular/material';
 
 @Component({
   selector: 'app-admission',
@@ -75,11 +76,12 @@ export class AdmissionComponent implements OnInit {
 
 //--------------------------------------------------
   enter(data:string){
-    //console.log(data);
+    console.log(data);
     this.check = true;
     this.disease.getdiseasebyid(data).then(Response=>{
       
       let data = Response.json();
+      console.log(data);
       this.str = data.data[0];
       //console.log(this.str);
     });
@@ -150,7 +152,7 @@ export class AdmissionComponent implements OnInit {
   setdiagshow() {
     for (let i = 0; i < this.diag.diagdisease.length; i++) {
       let result = new Diseaseshow();
-      if (this.diag.diagdisease[i].percen >= 20) {
+      if (this.diag.diagdisease[i].percen > 50) {
         this.diagshow.push(this.diag.diagdisease[i]);
         result.id = this.diag.diagdisease[i].disease;
         result.percen = this.diag.diagdisease[i].percen;
@@ -159,8 +161,9 @@ export class AdmissionComponent implements OnInit {
           this.diseasename.push(name);
           result.name = name.data[0].name;
         });
+        this.dshow.push(result);
       }
-      this.dshow.push(result);
+      
     }
 
     //console.log(this.dshow);

@@ -116,11 +116,11 @@
                   <th></th>
                 </tr>
                 <tr *ngFor="let d of dshow">
-                  - :
-                  <p>
+                  
+                  <li>
                     <mat-chip (mouseenter)="enter(d.id)" (mouseleave)="outer()">{{d.name}}</mat-chip>
-                  </p> :::::: {{d.percen}} %
-
+                   {{d.percen}} %
+                  </li>
                   <mat-progress-bar mode="determinate" value="{{d.percen}}"></mat-progress-bar>
 
                 </tr>
@@ -148,8 +148,8 @@
                     <li *ngFor="let q of question">
                       <!-- <div *ngIf="q" (onCreate)="yourMethod(item)"> 
                             </div> -->
-                      questionID : {{q.questionID}}
-                      <p>question : {{q.questionDetail}}</p>
+                      <!-- questionID : {{q.questionID}} -->
+                      question : {{q.questionDetail}}
                       <!-- <div let a of answer>
                         <p>answer : </p>
                         </div> -->
@@ -161,9 +161,9 @@
                     <li *ngFor="let a of answer">
                       <!-- <div *ngIf="q" (onCreate)="yourMethod(item)"> 
                               </div> -->
-                      answerID : {{a.answerID}}
-                      <p>Answer : {{a.answer}}</p>
-                      <p>symptom : {{a.symptom}}</p>
+                      <!-- answerID : {{a.answerID}} -->
+                      Answer : {{a.answer}}
+                      <!-- <p>symptom : {{a.symptom}}</p> -->
                       <!-- <div let a of answer>
                           <p>answer : </p>
                           </div> -->
